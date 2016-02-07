@@ -54,7 +54,7 @@ class Payroll
     end
   def pay_employees
   	@employees.each do |item|
-  		puts "#{item.name} -> #{item.calculate_salary*1.18}" # El error no está aquí, viene dado por otro método que habéis implementado
+  		puts "#{item.name} -> $#{(item.calculate_salary*1.18).round(2)}" # El error no está aquí, viene dado por otro método que habéis implementado
       # Should output how much we're paying each employee for this week and the total amount spent on payroll this week. 
   		end
   end
