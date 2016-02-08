@@ -3,6 +3,7 @@ require 'pry'
 class Game
   def initialize(roomArray)
     @roomArray = roomArray
+    @lastPosition = ""
   end
 
   def place1(choose, position)
@@ -12,6 +13,9 @@ class Game
       newChoose = gets.chomp
       place3(newChoose,place)
     elsif position == "0" && choose.upcase == "EXIT"
+      @lastPosition = File.open("position.txt", "w")
+      @lastPosition.puts(position)
+      @lastPosition.close 
     else
       puts "Aun es pronto, entra y disfruta de la fiesta"
       puts @roomArray[0].description
@@ -30,6 +34,9 @@ class Game
       newChoose = gets.chomp
       place3(newChoose,place)
     elsif position == "1" && choose.upcase == "EXIT"
+      @lastPosition = File.open("position.txt", "w")
+      @lastPosition.puts(position)
+      @lastPosition.close 
       else
       puts "Se que es una dificl decision pero debes elegir, yo recomiendo la birra"
       puts @roomArray[1].description
@@ -53,6 +60,9 @@ class Game
       newChoose = gets.chomp
       place1(newChoose,place)
     elsif position == "2" && choose.upcase == "EXIT"
+      @lastPosition = File.open("position.txt", "w")
+      @lastPosition.puts(position)
+      @lastPosition.close 
       else
       puts "Esa no es una opcion, vete por una birra mientras lo piensas"
       puts @roomArray[2].description
@@ -71,6 +81,9 @@ class Game
       newChoose = gets.chomp
       place6(newChoose,place)
     elsif position == "3" && choose.upcase == "EXIT"
+      @lastPosition = File.open("position.txt", "w")
+      @lastPosition.puts(position)
+      @lastPosition.close 
       else
       puts "Ese sitio no es una opción, te recomiendo ir al aseo y puedas beber más birras"
       puts @roomArray[3].description
@@ -84,6 +97,9 @@ class Game
       newChoose = gets.chomp
       place2(newChoose,place)
     elsif position == "4" && choose.upcase == "EXIT"
+      @lastPosition = File.open("position.txt", "w")
+      @lastPosition.puts(position)
+      @lastPosition.close 
       else
       puts "No, innoves. Lo mejor es ir a la barra por mas birra"
       puts @roomArray[4].description
@@ -97,6 +113,9 @@ class Game
       newChoose = gets.chomp
       place4(newChoose,place)
     elsif position == "5" && choose.upcase == "EXIT"
+      @lastPosition = File.open("position.txt", "w")
+      @lastPosition.puts(position)
+      @lastPosition.close 
       else
       puts "Ya has vaciado el tanque, cruza por la sala de DJ y ve por mas birras"
       puts @roomArray[5].description
@@ -127,7 +146,8 @@ game = Game.new(roomArray)
 puts room1.description
 choose = gets.chomp
 
-game.place1(choose,"0")
+game.place1(choose,File.open(position.txt, "r"))
+#file = 
 
 
 
