@@ -1,5 +1,5 @@
 require 'io/console'
-require 'colorize'
+#require 'colorize'
 
 class Blog
 	def initialize
@@ -50,11 +50,11 @@ class Post
 	end
 
 	def show_post(color)
-		puts (@title).colorize(color)
+		#puts (@title).colorize(color)
 		puts "****************".colorize(color)
-		puts (@text).colorize(color)
+		#puts (@text).colorize(color)
 		puts "------------".colorize(color)
-		puts (@date).colorize(color)
+		#puts (@date).colorize(color)
 	end
 
 end
@@ -63,9 +63,9 @@ class Ad < Post
 	def show_post(color)
 		puts "Advertise Disclaimer: This is a Paid Post".colorize(color)
 		puts ("\n*********" + @title + "*********").colorize(color)
-		puts (@text).colorize(color)
+		#puts (@text).colorize(color)
 		puts "------------".colorize(color)
-		puts (@date).colorize(color)
+		#puts (@date).colorize(color)
 	end
 end
 

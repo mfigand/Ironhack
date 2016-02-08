@@ -9,10 +9,10 @@ class Blog
   end
   
   def publish_front_page
-    ordered_posts = @container.sort_by(&:date).reverse do |post| #ordena en orden inverso
+    @ordered_posts = @container.sort_by(&:date).reverse do |post| #ordena en orden inverso
     post.date
     end
-    ordered_posts.each do |item|
+    @ordered_posts.each do |item|
       if item.sponsor == "NO"
        puts "#{item.title}"
        puts "**************"
@@ -28,16 +28,28 @@ class Blog
   end
 
   def pagination
+     puts @ordered_posts[0].text
      numPages = ((@container.length/3).floor+1)
-     page = []
-     i=0
-     loop do
-       i+=3
-       page = @container[i,i+1,i+2]
-       break if i>numPages
-     end
+     binding.prypu
+     puts "Page number #{}, In total #{numPages} pages"
+     puts "Write N to see the Next Page P to see previus page"
+     choose = gets.chomp.upcase
+     s = 0
+     j = 1
+     pageHash = {}
 
-    
+     # case choose
+     #  when "N"
+        
+     #    if s <= 3
+     #    pageHash[j] = [@ordered_posts[s]]
+     #    s += 1
+     #    end
+
+     #  when "P"
+     #    puts @container[(s)..(s-3)]
+     #    s -= 3
+     #  end 
   end
 
 end
@@ -71,8 +83,8 @@ my_blog.add_post(post6)
 my_blog.add_post(post7)
 my_blog.add_post(post8)
 
-my_blog.pagination
 my_blog.publish_front_page
+my_blog.pagination
 
 
 
