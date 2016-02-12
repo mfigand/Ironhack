@@ -1,0 +1,5 @@
+source 'https://rubygems.org'
+
+require "radio3/r3_client"
+# Specify your gem's dependencies in radio3.gemspec
+gemspec

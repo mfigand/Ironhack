@@ -46,8 +46,8 @@ get "/hours/:time/:hour" do
 end
 
 get "/hot-dog" do
-  @ingredients = ["hot1", "hot2", "hot"]
-  @hola = "hola"
+  @ingredients = ["hot1", "hot2", "hot3"]
+  @hola = "Hello Hot-Dog eater"
   erb(:hot_dog)
 end
 

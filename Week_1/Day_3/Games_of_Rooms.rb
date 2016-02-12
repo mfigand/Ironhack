@@ -14,8 +14,8 @@ class Game
       place3(newChoose,place)
     elsif position == "0" && choose.upcase == "EXIT"
       @lastPosition = File.open("position.txt", "w")
-      @lastPosition.puts(position)
-      @lastPosition.close 
+      # @lastPosition.puts(position)
+      # @lastPosition.close 
     else
       puts "Aun es pronto, entra y disfruta de la fiesta"
       puts @roomArray[0].description

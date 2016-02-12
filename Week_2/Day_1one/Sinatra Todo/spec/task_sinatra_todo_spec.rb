@@ -1,5 +1,6 @@
 require 'rspec'
 require './sinatra_todo.rb'
+require 'rack/test'
 
 
 RSpec.describe 'sinatra_todo' do
@@ -9,11 +10,12 @@ RSpec.describe 'sinatra_todo' do
 
   it "Puts the id of the Task" do
     expect(@task.id).to eq(1)
+
   end
 
-  it "Puts the id of the Task" do
+   it "Puts the id of the Task" do
     expect(@task.id).to eq(2)
-  end
+   end
 
   it "Puts the status of the Task" do
     expect(@task.completed).to eq(:false)
@@ -35,7 +37,7 @@ RSpec.describe 'sinatra_todo' do
     expect(@task.update_content!("Walk the dog")).to eq("Walk the dog")
   end
 
-  it "change the current time to nil" do
+  it "Update the content of the Task" do
     expect(@task.update_content!("Walk the dog")).to eq("Walk the dog")
   end
 
@@ -44,6 +46,14 @@ RSpec.describe 'sinatra_todo' do
     expect(@task.update_at).to eq(Time.now.strftime("%d/%b/%Y:%H:%M:%S"))
   end
 
-
 end
+
+
+
+
+
+
+
+
+
 

@@ -1,0 +1,6 @@
+guard :rspec, cmd: 'bundle exec rspec' do
+
+  watch(%r{^spec/.+_spec\.rb$}) #execute files in folder spec with extension .rb
+  watch(%r{^lib/(.+)\.rb$}) { |m| "spec/#{m[1]}_spec.rb" } #execute files in folder lib with extension .rb
+  watch("server.rb") { |m| "spec/server_spec.rb"} #execute files in root with extension .rb
+end
