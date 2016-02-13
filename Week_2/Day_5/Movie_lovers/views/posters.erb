@@ -13,10 +13,14 @@
 
 <% @nineMovieArray.each_with_index do |movie, index| %>
 
-<div class "boxes">
-  <img src="<%= movie.poster %>"><br>
-  <button type="submit" name="btn" value="search">Search</button>
-</div>
+<form action="/answer" method="POST">
+  <div class= "boxes">
+    <img src="<%= movie.poster %>"><br>
+    <button type="submit" name="btn" value="select">Select</button>
+  </div>
+      <input type="hidden" name="choosenYear" value="<%= movie.year %>">
+      <input type="hidden" name="correctYear" value="<%= @year %>">
+</form>
 
 <% end %>
   

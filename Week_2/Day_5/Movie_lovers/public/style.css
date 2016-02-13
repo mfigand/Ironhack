@@ -1,15 +1,18 @@
 body {
-  background-color: black;
+  background-color: #858585;
+  text-align: center;
 }
 
 img {
   width: 200px;
   height: 300px;
+  text-align: center;
 }
 
 .boxes {
-  height: 200px;
-  width: 300px;
+  width: 210px;
+  height: 320px;
   background-color: white;
   margin-top: 10px;
+  float: left;
 }
