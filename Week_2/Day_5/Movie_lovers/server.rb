@@ -11,5 +11,6 @@ end
 post "/search" do
   s = Search.new(params[:searchWord])
   @nineMovieArray = s.selector
+  @year = (@nineMovieArray.sample).year
   erb(:posters)
 end

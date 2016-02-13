@@ -8,9 +8,16 @@
 <body>
   <h1>Top 9 Movies</h1>
 
+  <h3>Which one of this movies was film in <%= @year %>?</h3>
+
 
 <% @nineMovieArray.each_with_index do |movie, index| %>
-  <img src="<%= movie.poster %>">
+
+<div class "boxes">
+  <img src="<%= movie.poster %>"><br>
+  <button type="submit" name="btn" value="search">Search</button>
+</div>
+
 <% end %>
   
 

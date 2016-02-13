@@ -1,4 +1,15 @@
+body {
+  background-color: black;
+}
+
 img {
   width: 200px;
   height: 300px;
+}
+
+.boxes {
+  height: 200px;
+  width: 300px;
+  background-color: white;
+  margin-top: 10px;
 }
