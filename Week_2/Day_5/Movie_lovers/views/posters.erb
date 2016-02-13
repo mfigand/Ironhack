@@ -1,0 +1,18 @@
+<!-- views/search.erb -->
+
+<html>
+<head>
+  <title>| MOVIE SEARCH |</title>
+  <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+  <h1>Top 9 Movies</h1>
+
+
+<% @nineMovieArray.each_with_index do |movie, index| %>
+  <img src="<%= movie.poster %>">
+<% end %>
+  
+
+</body>
+</html>

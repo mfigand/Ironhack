@@ -1,43 +1,28 @@
 require 'rspec'
 require "rack"
 require "rack/test"
-# require "imdb"
-require_relative '../server.rb'
+require "imdb"
+require_relative '../lib/movie_lovers.rb'
 
-Rspec.describe 'Server Service' do
+RSpec.describe 'test' do
   include Rack::Test::Methods
 
   def app
     Sinatra::Application
   end
 
-  # it "should load the home page" do
-  #   get '/'
-  #     expect(last_response).to be_ok
-  # end
+  before :each do
+     @imdbArray = Imdb::Search.new("Funny").movies
+     @search = Search.new(@imdbArray)
+   end
+
+  it 'should search movies with poster' do
+    @mwpa = @search.select_num_by_poster(nil)
+    expect(@mwpa.length).not_to be(0)
+  end
+
+  #All the tests were done on the fake_movie_lovers_spec
+  #because it took to long doing them with the imdb Gem
+
 
 end
-
-
-#RSpec.describe "Secure Password" do
-  # include Rack::Test::Methods
-
-  # def app
-  #   Sinatra::Application
-  # end
-
-
-
-#   before :each do
-#     @movie = Movie.new
-#     i = Imdb::Search.new("Funny")
-#   end
-
-#   it "should load the home page" do
-#     get '/'
-#     expect(last_response).to be_ok
-#   end
-
-
-# end
-

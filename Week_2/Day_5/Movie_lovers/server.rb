@@ -1,14 +1,15 @@
-
 require "sinatra"
 require "sinatra/reloader" 
-require "imdb"
-require_relative "../lib/movie_lovers.rb"
-enable(:sessions)
+require "Imdb"
+require_relative "./lib/movie_lovers.rb"
+# enable(:sessions)
 
-
-
-get "/" do
-   "hola"
+get "/" do 
+  erb(:home)
 end
 
-
+post "/search" do
+  s = Search.new(params[:searchWord])
+  @nineMovieArray = s.selector
+  erb(:posters)
+end
