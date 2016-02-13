@@ -21,6 +21,7 @@ class Search
         select_num_of_movies(9)
     else
       "No movies with that search word"
+    end
   end
 
 
