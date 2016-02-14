@@ -3,14 +3,16 @@
 <html>
 <head>
   <title>| MOVIE SEARCH |</title>
+  <link rel="stylesheet" type="text/css" href="style.css">
 </head>
-<body>
-  <h1>Movie Search</h1>
+<body class="coverBody">
+  <h1 class="coverTitle">::: Movie Quiz :::</h1>
 
+  <p><img class = "imgCover" src="movie_quiz.jpeg"/></p>
 
   <form action="/search" method="POST">
 
-    <label >Search movie by word</label>
+    <label class="coverSubTitle">Enter a word to start the quiz</label>
       <input type="text" name="searchWord" placeholder="enter word">
 
     <button type="submit" name="btn" value="search">Search</button>

@@ -16,11 +16,13 @@ class Search
   end
 
   def selector
-    if @imdbArray.length >= 1
+    if @imdbArray.length >= 2
         select_num_by_poster(nil)
         select_num_of_movies(9)
+    elsif @imdbArray[0] == nil
+      "No movies found"
     else
-      "No movies with that search word"
+      "No movies found"
     end
   end
 
@@ -29,8 +31,6 @@ class Search
 end
 
 
-# s = Search.new("funny")
-# puts s.selector.length
 
 
 

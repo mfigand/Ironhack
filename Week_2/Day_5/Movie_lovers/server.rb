@@ -2,7 +2,6 @@ require "sinatra"
 require "sinatra/reloader" 
 require "Imdb"
 require_relative "./lib/movie_lovers.rb"
-# require_relative "./lib/Fakemovie_lovers.rb"
 
 
 get "/" do 
@@ -12,17 +11,18 @@ end
 post "/search" do
   s = Search.new(params[:searchWord])
   @nineMovieArray = s.selector
-  @year = (@nineMovieArray.sample).year
-  # binding.pry
-  erb(:posters)
+  if @nineMovieArray.class == String 
+   erb(:fail)
+  else
+    @year = (@nineMovieArray.sample).year
+    erb(:posters)
+  end
 end
 
 post "/answer" do
   if params[:choosenYear] == params[:correctYear] 
-   "correct"
-    # erb(:correct)
+    erb(:correct)
   else
-    "incorrect"
-    # erb(:incorrect)
+    erb(:incorrect)
   end
 end
