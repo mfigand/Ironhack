@@ -1,0 +1,33 @@
+/**, *:before, *:after {
+  box-sizing: border-box;
+}
+
+.clearfix:before,
+.clearfix:after{
+  content: " "; 
+}
+
+.container {
+  width: 100%;
+  border:;
+}*/
+
+.box-set {
+ background: #eaeaed;
+ overflow: auto;/*le da una altura a la classe padre para que pueda ser visible*/
+}
+.box {
+ background: #2db34a;
+ text-align: center;
+ float: left;
+ margin: 1%;
+ width: 30%;
+}
+
+.box-set:before, .box-set:after {
+ content: "";
+ display: table;
+}
+.box-set:after {
+ clear: both;
+}
