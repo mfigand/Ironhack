@@ -3,7 +3,7 @@ var Viking = function(name, health, strength){
   this.health = health;
   this.strength = strength;
   this.attack = function(enemy){
-   console.log(this.health - enemy.strength);
+   return (this.health - enemy.strength);
   }
 }
 
@@ -32,7 +32,7 @@ var Pit = function(){
 }
 
 var pit = new Pit ()
-var maximus = new Viking("Maximus",Math.floor(Math.random() * 10) + 1,Math.floor(Math.random() * 10) + 1)
-var aquiles = new Viking("Aquiles", Math.floor(Math.random() * 10) + 1,Math.floor(Math.random() * 10) + 1)
+var maximus = new Viking("Maximus",Math.floor(Math.random() * 10000) + 1,Math.floor(Math.random() * 10) + 1)
+var aquiles = new Viking("Aquiles", Math.floor(Math.random() * 100000) + 1,Math.floor(Math.random() * 10) + 1)
 
 pit.fight(maximus,aquiles, 3)
