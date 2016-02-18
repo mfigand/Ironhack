@@ -1,0 +1,47 @@
+header{
+  background-color: grey;
+  color: black;
+}
+
+section {
+  background: blue;
+   width: 100%;
+   display: inline-block;
+}
+
+article{
+  background: red;
+  border: 1px solid purple;
+  display: block;
+  position: relative;
+  width: 70%;
+  float: left;
+}
+
+ul {
+  background-color: orange;
+  width: 20%;
+  float: right;
+}
+  
+img {
+  width: 60%;
+}
+
+footer {
+  background: grey;
+  min-height: ;
+  display: block;
+}
+
+
+
+
+
+
+
+
+
+
+
+
