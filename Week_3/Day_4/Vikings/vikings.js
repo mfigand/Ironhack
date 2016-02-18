@@ -7,17 +7,20 @@ var Viking = function(name, health, strength){
   }
 }
 
-var Pit = function(){
+var Pit = function(viking1, viking2, turn){
+  this.viking1 = viking1;
+  this.viking2 = viking2;
+  this.turn = turn;
 
-  this.fight = function(viking1, viking2, turn){
+  this.fight = function(){
     if (viking1.health > viking2.strength && viking2.health > viking1.strength){
-      return this.inPit(viking1, viking2, turn)
+      return this.inPit()
     }
     else {
       return console.log("Can´t fight because one will die")
     }
   }
-  this.inPit = function(viking1, viking2, turn) {
+  this.inPit = function() {
    var counter = 0;
    while (viking1.health > viking2.strength && viking2.health > viking1.strength && turn >= counter){
      viking1.attack(viking2);
@@ -31,8 +34,8 @@ var Pit = function(){
   }
 }
 
-var pit = new Pit ()
 var maximus = new Viking("Maximus",Math.floor(Math.random() * 10000) + 1,Math.floor(Math.random() * 10) + 1)
 var aquiles = new Viking("Aquiles", Math.floor(Math.random() * 100000) + 1,Math.floor(Math.random() * 10) + 1)
+var arena = new Pit (maximus,aquiles, 3)
 
-pit.fight(maximus,aquiles, 3)
+arena.fight()
