@@ -55,7 +55,7 @@ var Village = function(vikings,saxons,turn){
       var vikRan = vikings[Math.floor(Math.random()*vikings.length)];
       var saxRan = saxons[Math.floor(Math.random()*saxons.length)];
       if (vikRan.remainHealt(saxRan) <= 0){ deathVik++ }
-      else if (saxRan.remainHealt(vikRan) <= 0){ deathSax++ }//restar el saxo muerto al array de Saxons
+      else if (saxRan.remainHealt(vikRan) <= 0){ deathSax++ }//restar el saxo muerto al array de Saxons use splice()
       counter++;
     }
      console.log("xxx Percentage of Casualties after the massacre xxx ");
