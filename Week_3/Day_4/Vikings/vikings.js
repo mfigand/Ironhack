@@ -55,7 +55,7 @@ var Village = function(vikings,saxons,turn){
       var vikRan = vikings[Math.floor(Math.random()*vikings.length)];
       var saxRan = saxons[Math.floor(Math.random()*saxons.length)];
       if (vikRan.remainHealt(saxRan) <= 0){ deathVik++ }
-      else if (saxRan.remainHealt(vikRan) <= 0){ deathSax++ }
+      else if (saxRan.remainHealt(vikRan) <= 0){ deathSax++ }//restar el saxo muerto al array de Saxons
       counter++;
     }
      console.log("xxx Percentage of Casualties after the massacre xxx ");
@@ -66,7 +66,7 @@ var Village = function(vikings,saxons,turn){
 }
 
 
-var maximus = new Viking("Maximus",Math.floor(Math.random() * 10000) + 1,Math.floor(Math.random() * 10) + 1)
+var maximus = new Viking("Maximus",Math.floor(Math.random() * 100000) + 1,Math.floor(Math.random() * 10) + 1)
 var aquiles = new Viking("Aquiles", Math.floor(Math.random() * 100000) + 1,Math.floor(Math.random() * 10) + 1)
 var aldebaran = new Viking("Aldebaran", Math.floor(Math.random() * 100000) + 1,Math.floor(Math.random() * 10) + 1)
 var poor_saxon1 = new Saxon(Math.floor(Math.random() * 10) + 1,Math.floor(Math.random() * 5) + 1)

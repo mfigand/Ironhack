@@ -4,15 +4,15 @@ describe("the JavaScript language", function(){
 
   describe("has different types and operators that", function(){
     it("considers numbers to be equal to their string representation", function(){
-        expect(1 == "1").toBeTruthy(); 
+        expect(1 == "1").toBeTruthy();
         expect(1 != "1").toBeFalsy();
     });
 
     it("knows that numbers and strings are not exactly the same", function(){
-        expect(1 === "1").toBeFalsy(); 
+        expect(1 === "1").toBeFalsy();
         expect(1 !== "1").toBeTruthy();
     });
- 
+
     it("joins parts as string when using the plus operator", function(){
         expect(1 + "a").toEqual("1a");
     });
@@ -71,13 +71,13 @@ describe("the JavaScript language", function(){
         arr[9] = 6;
         var matrix = [['a', 'b', 'c'], ['d', 'e', 'f'], ['g', 7, 8]];
 
-        
+
         expect(arr[1]).toEqual(2);
         expect(arr[4]).toEqual(5);
         expect(arr[6]).toEqual(undefined);
         expect(arr[9]).toEqual(6);
         expect(matrix[0][2]).toEqual('c');
-        
+
     });
 
     it("may contain functions inside arrays", function(){
@@ -129,7 +129,7 @@ describe("the JavaScript language", function(){
 
 
   describe("considers functions as first class citizens", function(){
-  
+
     it("can declare named functions", function(){
         function example(){
             return 'some example';
@@ -149,9 +149,9 @@ describe("the JavaScript language", function(){
 
     it("may return anything", function(){
         function example(arg){
-            return [arg, arg * 2, arg * 3]; 
+            return [arg, arg * 2, arg * 3];
         }
- 
+
         var result = example(2);
 
         expect(result[1]).toEqual(4);
@@ -162,7 +162,7 @@ describe("the JavaScript language", function(){
            // write the missing code here
            return [function(arg){ return [1,10] }]
         }
-        
+
         expect(example()[0](1)[1]).toEqual(10);
     });
 
@@ -170,9 +170,9 @@ describe("the JavaScript language", function(){
         function exampleA(){
             return exampleB(1);
         }
-        
+
         expect(exampleA()).toEqual(1);
-        
+
         function exampleB(arg1){
             return arg1;
         }
@@ -186,10 +186,10 @@ describe("the JavaScript language", function(){
         var exampleA = function(){
             return exampleB(1);
         };
-        
+
         expect(exampleA()).toEqual(1);
-        
-        
+
+
     });
 
     it("can use optional parameters", function(){
@@ -256,7 +256,7 @@ describe("the JavaScript language", function(){
            // write the missing code here
            return [function(arg){return [0,9+arg]}]
         }
-        
+
         //expect(example()[0](1)[1]).toEqual(10);
         //expect(example()[0](2)[1]).toEqual(11);
         expect(example()[0](3)[1]).toEqual(12);
@@ -273,7 +273,7 @@ describe("the JavaScript language", function(){
 
         example(x)
         expect(x).toEqual(1);
-        
+
         example(y);
         expect(y).toEqual("example");
 
@@ -324,7 +324,7 @@ describe("the JavaScript language", function(){
         }
 
         var f = plus(5);
-        
+
         expect(f(3)).toBe(8);
     });
 
@@ -341,7 +341,7 @@ describe("the JavaScript language", function(){
 
     it("may have functions as the input and the output", function(){
         function plus(originalFunction){
-          return function(arg1){ 
+          return function(arg1){
                return originalFunction() + arg1;
           };
         }
@@ -389,7 +389,7 @@ describe("the JavaScript language", function(){
     it("can create properties dynamically", function(){
         var obj = {name: 'bob', surname: 'sponge'};
         obj.address = 'palm tree';
-      
+
         expect(obj.address).toEqual("palm tree");
         expect(obj['address']).toEqual("palm tree");
         expect(obj['name']).toEqual("bob");
@@ -425,7 +425,7 @@ describe("the JavaScript language", function(){
         function createObject(initialScore, color){
             // write the code here
             var score = initialScore
-            
+
 
             return {
                 color: color,
@@ -434,12 +434,12 @@ describe("the JavaScript language", function(){
             }
         }
 
-        
+
         var obj = createObject(5, 'red');
         obj.incrementScoreIn(5);
         expect(obj.color).toEqual('red');
         expect(obj.points()).toEqual(10);
-        
+
     });
 
     it("can define constructors", function(){
@@ -481,7 +481,7 @@ describe("the JavaScript language", function(){
         var obj = new Obj();
         expect(obj.theName()).toEqual();
         expect(obj.theName).toBe(new Obj().theName);
-    }); 
+    });
 
     it("can define a factory", function(){
         function obj(){
@@ -577,7 +577,7 @@ describe("the JavaScript language", function(){
         myNamespace.addOne();
         myNamespace.addOne();
 
-        expect(myNamespace.giveMeTheCount()).toBe();
+        expect(myNamespace.giveMeTheCount()).toBe(2);
     });
     it("hoists variables the way you probably dont expect", function(){
         function generate(){
@@ -608,10 +608,10 @@ describe("the JavaScript language", function(){
           return true;
         };
       }
-      ////////////////////////////////////// 
+      //////////////////////////////////////
       // "Class"
       function Lion(energy){
-        Cat.call(this); 
+        Cat.call(this);
         this.energy = energy || 100;
         var self = this;
 
@@ -623,7 +623,7 @@ describe("the JavaScript language", function(){
         };
         this.playWithFriend = function(friend){
             if (friend.isPurring())
-               self.energy += 10; 
+               self.energy += 10;
         };
         this.hunt = function(){ // public method
             run();
@@ -636,7 +636,7 @@ describe("the JavaScript language", function(){
 
       context("and the THIS keyword", function(){
         var cat;
-        
+
         beforeEach(function(){
             cat = new Cat();
             window.kilos = 0;
@@ -728,9 +728,9 @@ describe("the JavaScript language", function(){
                    }
                }
             };
-         }  
-         
-         // PLEASE READ THIS POST. It contains the theory: 
+         }
+
+         // PLEASE READ THIS POST. It contains the theory:
          // http://www.carlosble.com/2013/02/event-oriented-programming-with-javascript/
 
         it("uses the DOM level 0 traditional model (one2one)", function(){
@@ -747,7 +747,7 @@ describe("the JavaScript language", function(){
         it("implements the observer pattern (one2many)", function(){
             function Publisher(){
               this.addObserver = function(observerCallback){
-                // TODO: implement this 
+                // TODO: implement this
               };
               this.informAllObservers = function(){
                 // TODO: implement this
@@ -756,7 +756,7 @@ describe("the JavaScript language", function(){
 
             var publisher = new Publisher();
             var observer1WasCalled = false;
-            var observer1 = function(){ observer1WasCalled = true;};  
+            var observer1 = function(){ observer1WasCalled = true;};
             var observer2WasCalled = false;
             var observer2 = function(){ observer2WasCalled = true;};
             publisher.addObserver(observer1);
@@ -764,12 +764,12 @@ describe("the JavaScript language", function(){
 
             publisher.informAllObservers();
 
-            //expect(observer1WasCalled).toBeTruthy();    
+            //expect(observer1WasCalled).toBeTruthy();
             //expect(observer2WasCalled).toBeTruthy();
         });
 
         it("implements the pub/sub pattern (many2many)", function(){
-            var eventBus = new EventBus();  
+            var eventBus = new EventBus();
             var eventWasFired = false;
             var handler = function(eventName, eventArgs){
                 eventWasFired = true;
@@ -780,7 +780,7 @@ describe("the JavaScript language", function(){
             eventBus.emit("someEvent", {someNumber: 10});
 
             //expect(eventWasFired).toBeFalsy();
-        }); 
+        });
       });
   });
 });
