@@ -1,11 +1,16 @@
-
+.navbar {
+     margin-bottom: 0px;
+}
+.hide{
+  overflow: hidden;
+}
 .logoTwiter{
   /*margin: 0 auto; works like a clock*/
   text-align: center;
 }
 
 .logoTwiter2{
-  width: 5%;
+  width: 7%;
   margin-top: 10px;
 }
 
@@ -13,39 +18,72 @@
   width: 10%;
 }
 
-.btnTwitear{
-  background-color: blue;
+.twitt{
+  margin-left: 10px;
+  background: #33ADAD;
+  color: white;
 }
 
 .landscape{
   position: relative;
+  text-align: center;
   width: 100%;
-  height: 230px;
+  height: 300px;
   background-color: #009999;
+  background-image: url("https://pbs.twimg.com/profile_banners/1551130856/1454708698/1500x500");
+}
+
+.landscape img{
+  height: 300px;
+  width: 100%;
 }
 
 .ironlogo{
   position: absolute;
-  top:150px;
-  left: 100px;
-  height: 150px;
-  width: 150px;
+  top:200px;
+  left: 90px;
+  height: 230px;
+  width: 230px;
   background-image: url("./ironlogo.png");
+  border-style: solid;
+  border-color: white;
+  border-width: 5px;
+  z-index: 100;
   border-radius: 20px;
-
 }
+<img alt="" src=>
 
 /*.ironlogo {
   text-align: center;
 }*/
-
+.col-md-6 {
+    width: 44%;
+}
+.notifications{
+  margin-left: -70px;
+}
 
 .notifications a{
-  margin: 0 0px;
+  /*margin: 0 0px;*/
+}
+.settings{
+  font-size: 25px;
+  color: #8899A6;
+  top: 10px;
+  margin-left: 20px;
 }
 
 a{
   color: #555;
+}
+.numbers{
+  color: #009999;
+}
+
+.siguiendo{
+  margin-left: 10px;
+  background: #1C9BEA;
+  color: white;
 }
 
 /*
