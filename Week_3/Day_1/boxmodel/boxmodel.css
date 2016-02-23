@@ -1,0 +1,50 @@
+// commons.css
+*, *:before, *:after {
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+}
+
+
+// navigation.css
+nav {
+    width: 500px;
+    border: 1px solid blue;
+    margin: 50px auto 0;
+    height: 50px;
+}
+
+nav ul {
+    padding: 0;
+    margin: 0;
+}
+
+nav li {
+    float: left;
+    list-style-type: none;
+}
+
+nav a {
+    display: inline-block;
+    width: 100px;
+    height: 100%;
+    background-color: #ccc;
+    color: #fff;
+    text-decoration: none;
+    line-height: 300%;
+    text-align: center;
+}
+
+nav li:nth-child(1n) a {
+    background-color: #3C536F;
+    border-left: 0;
+}
+nav li:nth-child(2n) a {
+    background-color: #6EA634;
+}
+
+nav a {
+    border-left: 1px solid #aaa;
+    border-right: 1px solid #f3f3f3;
+}
+

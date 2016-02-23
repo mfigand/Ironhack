@@ -1,0 +1,24 @@
+<!-- views/home.erb -->
+
+<html>
+<head>
+  <title>| MOVIE SEARCH |</title>
+  <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body class="coverBody">
+  <h1 class="coverTitle">::: Movie Quiz :::</h1>
+
+  <p><img class = "imgCover" src="movie_quiz.jpeg"/></p>
+
+  <form action="/search" method="POST">
+
+    <label class="coverSubTitle">Enter a word to start the quiz</label>
+      <input type="text" name="searchWord" placeholder="enter word">
+
+    <button type="submit" name="btn" value="search">Search</button>
+    
+  </form>
+
+
+</body>
+</html>

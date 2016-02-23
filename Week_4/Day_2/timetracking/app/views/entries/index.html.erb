@@ -1,0 +1,10 @@
+
+
+<%= "Project name: #{@projects.name}" %>
+<ul>
+  <% @entries.each do |entries| %>
+     <% if entries.hours != nil %>
+       <li><%= "#{entries.hours} h #{entries.minutes} m - #{entries.date}" %> </li>
+      <% end %>
+  <% end%>
+</ul>

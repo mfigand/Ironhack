@@ -1,0 +1,20 @@
+<h1>My first Sinatra<h1>
+<h2>
+  <b>Author:<b>
+    Izzy Ironside
+</h2>
+
+<p>
+  Izzy Ironside was born on
+  <%= Date.today.strftime("%d/%b/%Y:%H:%M:%S")%>
+</p>
+
+<% if Date.today.monday? %>
+  <p>
+    Izzy Ironside is <strong>NOT</strong>
+    a fan of Mondays like today.
+  </p>
+<% else %>
+  <p>Today is not Monday</p>
+<% end %>
+

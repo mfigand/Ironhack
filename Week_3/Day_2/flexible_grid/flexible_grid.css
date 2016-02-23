@@ -1,0 +1,68 @@
+.container{
+  border: 1px solid purple;
+  display: block;
+  margin-left: 50px; 
+  position: relative;
+  height: 200px;
+  width: 200px;
+}
+
+.container:before {
+  content: 'Default rule';
+  border: 1px solid red;
+  display: block;
+  margin-left: 50px;
+}
+
+@media screen and (max-width: 600px){
+  .container:before{
+    content: 'small';/*  When the screen have less than 600px change the content from 'Default rule' to 'Small' */
+  }
+  
+}
+
+div {
+  display: inline;
+}
+
+.row {
+  width: 100%;
+  border: 1px solid black;
+  display: inline;
+}
+
+.col1 {
+  width: 10%;
+  border: 1px solid orange;
+}
+
+.col3 {
+  width: 30%;
+  border: 1px solid blue;
+}
+
+.col5 {
+  width: 50%;
+  border: 1px solid green;
+}
+
+
+@media screen and (max-width: 600px){
+  .row:before{
+    width: 50%;
+  }
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
