@@ -2,11 +2,11 @@ Rails.application.routes.draw do
 
   get '/' => 'contacts#index'
 
-  get "/contact" => "contacts#new"
+  get "/contacts" => "contacts#new"
 
-  Rails.application.routes.draw do
+  post "/contacts" => "contacts#index"
 
-    post("/contacts", :to => "contacts#index")
-  end
+  get '/contacts/:id' => "contacts#show"
+
 
 end

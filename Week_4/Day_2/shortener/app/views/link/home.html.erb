@@ -1,0 +1,14 @@
+<h1>URL Shortener</h1>
+
+<form action="/shortlink" method="POST">
+  <div>
+    <label for="link_originallink">Original URL:</label>
+    <input type="text" name="link[originallink]" id="link_originallink" placeholder="enter url">
+  </div>
+
+  <div>
+    <button type="submit">Shortener</button>
+  </div>
+
+  <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+</form>
