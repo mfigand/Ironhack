@@ -2,8 +2,16 @@
 
 <ul>
   <% @contacts.each do |contact| %>
+<<<<<<< HEAD
        <li><a href="/contacts/:id"> <%= "#{contact.name} - #{contact.adress} - #{contact.phone} - #{contact.email}" %> </a></li>
   <% end%>
 </ul>
 
 <a href="/contacts">Add new contact</a>
+=======
+       <li><%= "#{contact.name} - #{contact.adress} - #{contact.phone} - #{contact.email}" %> </li>
+  <% end%>
+</ul>
+
+<a href="/contact">Add new contact</a>
+>>>>>>> b791b06f89bddbf71edd02ad19ba4a4d07bcdb15
