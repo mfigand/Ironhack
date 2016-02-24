@@ -1142,3 +1142,427 @@ Processing by LinkController#show as HTML
   [1m[36mLink Load (0.1ms)[0m  [1mSELECT  "links".* FROM "links" WHERE "links"."shortlink" = ?  ORDER BY "links"."id" ASC LIMIT 1[0m  [["shortlink", "345"]]
 Redirected to https://www.google.es/?gfe_rd=cr&ei=PorMVsmqNevt8welzae4Ag&gws_rd=ssl
 Completed 302 Found in 2ms (ActiveRecord: 0.1ms)
+
+
+Started GET "/" for ::1 at 2016-02-23 19:47:43 +0100
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by LinkController#home as HTML
+  Rendered link/home.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 202ms (Views: 188.6ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/shortlink" for ::1 at 2016-02-23 19:47:50 +0100
+Processing by LinkController#shortlink as HTML
+  Parameters: {"link"=>{"originallink"=>"https://www.google.es/?gfe_rd=cr&ei=PorMVsmqNevt8welzae4Ag&gws_rd=ssl"}, "authenticity_token"=>"OeJIrgyg9UehJSje8IoqRUD2Re1W6wpZkh3j8ffUyny4yk+eSeQYouV5Ux2OtnNQ/C/Z/1akI1vTKlPWmT2IZw=="}
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "links" ("originallink", "shortlink", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["originallink", "https://www.google.es/?gfe_rd=cr&ei=PorMVsmqNevt8welzae4Ag&gws_rd=ssl"], ["shortlink", "GcM"], ["created_at", "2016-02-23 18:47:50.202035"], ["updated_at", "2016-02-23 18:47:50.202035"]]
+  [1m[35m (0.7ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  commit transaction
+Redirected to http://localhost:3000/GcM
+Completed 302 Found in 13ms (ActiveRecord: 1.6ms)
+
+
+Started GET "/GcM" for ::1 at 2016-02-23 19:47:50 +0100
+Processing by LinkController#show as HTML
+  Parameters: {"shortlink"=>"GcM"}
+  [1m[36mLink Load (0.2ms)[0m  [1mSELECT  "links".* FROM "links" WHERE "links"."shortlink" = ?  ORDER BY "links"."id" ASC LIMIT 1[0m  [["shortlink", "GcM"]]
+Redirected to https://www.google.es/?gfe_rd=cr&ei=PorMVsmqNevt8welzae4Ag&gws_rd=ssl
+Completed 302 Found in 5ms (ActiveRecord: 0.2ms)
+  [1m[36m (1.7ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL) [0m
+  [1m[35m (0.1ms)[0m  select sqlite_version(*)
+  [1m[36m (0.7ms)[0m  [1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.1ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+Migrating to CreateLinks (20160223161331)
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.8ms)[0m  CREATE TABLE "links" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "originallink" text, "shortlink" text, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20160223161331"]]
+  [1m[35m (0.6ms)[0m  commit transaction
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+
+
+Started GET "/" for ::1 at 2016-02-23 21:42:19 +0100
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by LinkController#home as HTML
+  Rendered link/home.html.erb within layouts/application (1.6ms)
+Completed 200 OK in 197ms (Views: 187.2ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/shortlink" for ::1 at 2016-02-23 21:45:17 +0100
+Processing by LinkController#shortlink as HTML
+  Parameters: {"link"=>{"originallink"=>"http://thatsthefinger.com/"}, "authenticity_token"=>"XWJr40Ah0UAhrGtku52QePnazUJS+LjmZwuaYfT9syPcSmzTBWU8pWXwEKfFocltRQNRUFK3keQmPCpGmhTxOA=="}
+Completed 500 Internal Server Error in 6ms (ActiveRecord: 0.0ms)
+
+NameError (undefined local variable or method `randomKey' for #<LinkController:0x007fa97f280ac0>):
+  app/controllers/link_controller.rb:6:in `shortlink'
+
+
+  Rendered /Users/m.figand/.rvm/gems/ruby-2.2.3/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (4.0ms)
+  Rendered /Users/m.figand/.rvm/gems/ruby-2.2.3/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.2ms)
+  Rendered /Users/m.figand/.rvm/gems/ruby-2.2.3/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.0ms)
+  Rendered /Users/m.figand/.rvm/gems/ruby-2.2.3/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (55.2ms)
+  Rendered /Users/m.figand/.rvm/gems/ruby-2.2.3/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.4ms)
+  Rendered /Users/m.figand/.rvm/gems/ruby-2.2.3/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/m.figand/.rvm/gems/ruby-2.2.3/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/m.figand/.rvm/gems/ruby-2.2.3/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/m.figand/.rvm/gems/ruby-2.2.3/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (48.0ms)
+  Rendered /Users/m.figand/.rvm/gems/ruby-2.2.3/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/m.figand/.rvm/gems/ruby-2.2.3/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.6ms)
+  Rendered /Users/m.figand/.rvm/gems/ruby-2.2.3/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (104.0ms)
+
+
+Started POST "/shortlink" for ::1 at 2016-02-23 21:46:39 +0100
+Processing by LinkController#shortlink as HTML
+  Parameters: {"link"=>{"originallink"=>"http://thatsthefinger.com/"}, "authenticity_token"=>"XWJr40Ah0UAhrGtku52QePnazUJS+LjmZwuaYfT9syPcSmzTBWU8pWXwEKfFocltRQNRUFK3keQmPCpGmhTxOA=="}
+Completed 500 Internal Server Error in 4ms (ActiveRecord: 0.0ms)
+
+NoMethodError (undefined method `randomKey' for #<Class:0x007fa97daa55e0>):
+  app/controllers/link_controller.rb:5:in `shortlink'
+
+
+  Rendered /Users/m.figand/.rvm/gems/ruby-2.2.3/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (3.7ms)
+  Rendered /Users/m.figand/.rvm/gems/ruby-2.2.3/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.9ms)
+  Rendered /Users/m.figand/.rvm/gems/ruby-2.2.3/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.9ms)
+  Rendered /Users/m.figand/.rvm/gems/ruby-2.2.3/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (49.3ms)
+  Rendered /Users/m.figand/.rvm/gems/ruby-2.2.3/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.3ms)
+  Rendered /Users/m.figand/.rvm/gems/ruby-2.2.3/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/m.figand/.rvm/gems/ruby-2.2.3/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/m.figand/.rvm/gems/ruby-2.2.3/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/m.figand/.rvm/gems/ruby-2.2.3/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (42.0ms)
+  Rendered /Users/m.figand/.rvm/gems/ruby-2.2.3/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/m.figand/.rvm/gems/ruby-2.2.3/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/m.figand/.rvm/gems/ruby-2.2.3/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (86.9ms)
+
+
+Started POST "/shortlink" for ::1 at 2016-02-23 21:47:23 +0100
+Processing by LinkController#shortlink as HTML
+  Parameters: {"link"=>{"originallink"=>"http://thatsthefinger.com/"}, "authenticity_token"=>"XWJr40Ah0UAhrGtku52QePnazUJS+LjmZwuaYfT9syPcSmzTBWU8pWXwEKfFocltRQNRUFK3keQmPCpGmhTxOA=="}
+Completed 500 Internal Server Error in 2ms (ActiveRecord: 0.0ms)
+
+NoMethodError (undefined method `randomKey' for #<Class:0x007fa97daa55e0>):
+  app/controllers/link_controller.rb:5:in `shortlink'
+
+
+  Rendered /Users/m.figand/.rvm/gems/ruby-2.2.3/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (3.5ms)
+  Rendered /Users/m.figand/.rvm/gems/ruby-2.2.3/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.6ms)
+  Rendered /Users/m.figand/.rvm/gems/ruby-2.2.3/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.7ms)
+  Rendered /Users/m.figand/.rvm/gems/ruby-2.2.3/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (45.9ms)
+  Rendered /Users/m.figand/.rvm/gems/ruby-2.2.3/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.3ms)
+  Rendered /Users/m.figand/.rvm/gems/ruby-2.2.3/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/m.figand/.rvm/gems/ruby-2.2.3/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/m.figand/.rvm/gems/ruby-2.2.3/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/m.figand/.rvm/gems/ruby-2.2.3/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (45.0ms)
+  Rendered /Users/m.figand/.rvm/gems/ruby-2.2.3/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.2ms)
+  Rendered /Users/m.figand/.rvm/gems/ruby-2.2.3/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.5ms)
+  Rendered /Users/m.figand/.rvm/gems/ruby-2.2.3/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (91.6ms)
+
+
+Started POST "/shortlink" for ::1 at 2016-02-23 21:47:36 +0100
+
+SyntaxError (/Users/m.figand/Documents/IRONHACK/Ironhack-BootCamp/Week_4/Day_2/shortener/app/controllers/link_controller.rb:7: syntax error, unexpected tIDENTIFIER, expecting ')'
+    link.save
+        ^):
+  app/controllers/link_controller.rb:7: syntax error, unexpected tIDENTIFIER, expecting ')'
+
+
+  Rendered /Users/m.figand/.rvm/gems/ruby-2.2.3/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (3.6ms)
+  Rendered /Users/m.figand/.rvm/gems/ruby-2.2.3/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.0ms)
+  Rendered /Users/m.figand/.rvm/gems/ruby-2.2.3/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.2ms)
+  Rendered /Users/m.figand/.rvm/gems/ruby-2.2.3/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (45.0ms)
+  Rendered /Users/m.figand/.rvm/gems/ruby-2.2.3/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.3ms)
+  Rendered /Users/m.figand/.rvm/gems/ruby-2.2.3/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/m.figand/.rvm/gems/ruby-2.2.3/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/m.figand/.rvm/gems/ruby-2.2.3/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.5ms)
+  Rendered /Users/m.figand/.rvm/gems/ruby-2.2.3/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (48.9ms)
+  Rendered /Users/m.figand/.rvm/gems/ruby-2.2.3/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/m.figand/.rvm/gems/ruby-2.2.3/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.5ms)
+  Rendered /Users/m.figand/.rvm/gems/ruby-2.2.3/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (98.8ms)
+
+
+Started POST "/shortlink" for ::1 at 2016-02-23 21:48:41 +0100
+Processing by LinkController#shortlink as HTML
+  Parameters: {"link"=>{"originallink"=>"http://thatsthefinger.com/"}, "authenticity_token"=>"XWJr40Ah0UAhrGtku52QePnazUJS+LjmZwuaYfT9syPcSmzTBWU8pWXwEKfFocltRQNRUFK3keQmPCpGmhTxOA=="}
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "links" ("originallink", "shortlink", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["originallink", "http://thatsthefinger.com/"], ["shortlink", "unx"], ["created_at", "2016-02-23 20:48:41.881310"], ["updated_at", "2016-02-23 20:48:41.881310"]]
+  [1m[35m (0.8ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  commit transaction
+Redirected to http://localhost:3000/unx
+Completed 302 Found in 15ms (ActiveRecord: 1.8ms)
+
+
+Started GET "/unx" for ::1 at 2016-02-23 21:48:41 +0100
+Processing by LinkController#show as HTML
+  Parameters: {"shortlink"=>"unx"}
+  [1m[36mLink Load (0.4ms)[0m  [1mSELECT  "links".* FROM "links" WHERE "links"."shortlink" = ?  ORDER BY "links"."id" ASC LIMIT 1[0m  [["shortlink", "unx"]]
+Redirected to http://thatsthefinger.com/
+Completed 302 Found in 7ms (ActiveRecord: 0.4ms)
+
+
+Started POST "/shortlink" for ::1 at 2016-02-23 21:50:49 +0100
+Processing by LinkController#shortlink as HTML
+  Parameters: {"link"=>{"originallink"=>"http://cant-not-tweet-this.com/"}, "authenticity_token"=>"XWJr40Ah0UAhrGtku52QePnazUJS+LjmZwuaYfT9syPcSmzTBWU8pWXwEKfFocltRQNRUFK3keQmPCpGmhTxOA=="}
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "links" ("originallink", "shortlink", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["originallink", "http://cant-not-tweet-this.com/"], ["shortlink", "Dmu"], ["created_at", "2016-02-23 20:50:49.261653"], ["updated_at", "2016-02-23 20:50:49.261653"]]
+  [1m[35m (0.8ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  commit transaction
+Redirected to http://localhost:3000/Dmu
+Completed 302 Found in 5ms (ActiveRecord: 1.3ms)
+
+
+Started GET "/Dmu" for ::1 at 2016-02-23 21:50:49 +0100
+Processing by LinkController#show as HTML
+  Parameters: {"shortlink"=>"Dmu"}
+  [1m[36mLink Load (0.1ms)[0m  [1mSELECT  "links".* FROM "links" WHERE "links"."shortlink" = ?  ORDER BY "links"."id" ASC LIMIT 1[0m  [["shortlink", "Dmu"]]
+Redirected to http://cant-not-tweet-this.com/
+Completed 302 Found in 1ms (ActiveRecord: 0.1ms)
+
+
+Started POST "/shortlink" for ::1 at 2016-02-23 21:51:20 +0100
+Processing by LinkController#shortlink as HTML
+  Parameters: {"link"=>{"originallink"=>"http://heeeeeeeey.com/"}, "authenticity_token"=>"XWJr40Ah0UAhrGtku52QePnazUJS+LjmZwuaYfT9syPcSmzTBWU8pWXwEKfFocltRQNRUFK3keQmPCpGmhTxOA=="}
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "links" ("originallink", "shortlink", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["originallink", "http://heeeeeeeey.com/"], ["shortlink", "FVb"], ["created_at", "2016-02-23 20:51:20.561743"], ["updated_at", "2016-02-23 20:51:20.561743"]]
+  [1m[35m (0.7ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+Redirected to http://localhost:3000/FVb
+Completed 302 Found in 5ms (ActiveRecord: 1.2ms)
+
+
+Started GET "/FVb" for ::1 at 2016-02-23 21:51:20 +0100
+Processing by LinkController#show as HTML
+  Parameters: {"shortlink"=>"FVb"}
+  [1m[36mLink Load (0.1ms)[0m  [1mSELECT  "links".* FROM "links" WHERE "links"."shortlink" = ?  ORDER BY "links"."id" ASC LIMIT 1[0m  [["shortlink", "FVb"]]
+Redirected to http://heeeeeeeey.com/
+Completed 302 Found in 1ms (ActiveRecord: 0.1ms)
+
+
+Started POST "/shortlink" for ::1 at 2016-02-23 21:52:36 +0100
+Processing by LinkController#shortlink as HTML
+  Parameters: {"link"=>{"originallink"=>"http://eelslap.com/"}, "authenticity_token"=>"XWJr40Ah0UAhrGtku52QePnazUJS+LjmZwuaYfT9syPcSmzTBWU8pWXwEKfFocltRQNRUFK3keQmPCpGmhTxOA=="}
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "links" ("originallink", "shortlink", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["originallink", "http://eelslap.com/"], ["shortlink", "VYZ"], ["created_at", "2016-02-23 20:52:36.879827"], ["updated_at", "2016-02-23 20:52:36.879827"]]
+  [1m[35m (0.8ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  commit transaction
+Redirected to http://localhost:3000/VYZ
+Completed 302 Found in 5ms (ActiveRecord: 1.5ms)
+
+
+Started GET "/VYZ" for ::1 at 2016-02-23 21:52:36 +0100
+Processing by LinkController#show as HTML
+  Parameters: {"shortlink"=>"VYZ"}
+  [1m[36mLink Load (0.1ms)[0m  [1mSELECT  "links".* FROM "links" WHERE "links"."shortlink" = ?  ORDER BY "links"."id" ASC LIMIT 1[0m  [["shortlink", "VYZ"]]
+Redirected to http://eelslap.com/
+Completed 302 Found in 1ms (ActiveRecord: 0.1ms)
+
+
+Started POST "/shortlink" for ::1 at 2016-02-23 21:52:56 +0100
+Processing by LinkController#shortlink as HTML
+  Parameters: {"link"=>{"originallink"=>"http://www.fallingfalling.com/"}, "authenticity_token"=>"XWJr40Ah0UAhrGtku52QePnazUJS+LjmZwuaYfT9syPcSmzTBWU8pWXwEKfFocltRQNRUFK3keQmPCpGmhTxOA=="}
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "links" ("originallink", "shortlink", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["originallink", "http://www.fallingfalling.com/"], ["shortlink", "Ozt"], ["created_at", "2016-02-23 20:52:56.901180"], ["updated_at", "2016-02-23 20:52:56.901180"]]
+  [1m[35m (0.8ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  commit transaction
+Redirected to http://localhost:3000/Ozt
+Completed 302 Found in 5ms (ActiveRecord: 1.3ms)
+
+
+Started GET "/Ozt" for ::1 at 2016-02-23 21:52:56 +0100
+Processing by LinkController#show as HTML
+  Parameters: {"shortlink"=>"Ozt"}
+  [1m[36mLink Load (0.1ms)[0m  [1mSELECT  "links".* FROM "links" WHERE "links"."shortlink" = ?  ORDER BY "links"."id" ASC LIMIT 1[0m  [["shortlink", "Ozt"]]
+Redirected to http://www.fallingfalling.com/
+Completed 302 Found in 1ms (ActiveRecord: 0.1ms)
+
+
+Started POST "/shortlink" for ::1 at 2016-02-23 21:53:13 +0100
+Processing by LinkController#shortlink as HTML
+  Parameters: {"link"=>{"originallink"=>"http://just-shower-thoughts.tumblr.com/"}, "authenticity_token"=>"XWJr40Ah0UAhrGtku52QePnazUJS+LjmZwuaYfT9syPcSmzTBWU8pWXwEKfFocltRQNRUFK3keQmPCpGmhTxOA=="}
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "links" ("originallink", "shortlink", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["originallink", "http://just-shower-thoughts.tumblr.com/"], ["shortlink", "DyK"], ["created_at", "2016-02-23 20:53:13.546860"], ["updated_at", "2016-02-23 20:53:13.546860"]]
+  [1m[35m (0.8ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  commit transaction
+Redirected to http://localhost:3000/DyK
+Completed 302 Found in 4ms (ActiveRecord: 1.3ms)
+
+
+Started GET "/DyK" for ::1 at 2016-02-23 21:53:13 +0100
+Processing by LinkController#show as HTML
+  Parameters: {"shortlink"=>"DyK"}
+  [1m[36mLink Load (0.1ms)[0m  [1mSELECT  "links".* FROM "links" WHERE "links"."shortlink" = ?  ORDER BY "links"."id" ASC LIMIT 1[0m  [["shortlink", "DyK"]]
+Redirected to http://just-shower-thoughts.tumblr.com/
+Completed 302 Found in 2ms (ActiveRecord: 0.1ms)
+
+
+Started POST "/shortlink" for ::1 at 2016-02-23 21:53:30 +0100
+Processing by LinkController#shortlink as HTML
+  Parameters: {"link"=>{"originallink"=>"http://www.trypap.com/"}, "authenticity_token"=>"XWJr40Ah0UAhrGtku52QePnazUJS+LjmZwuaYfT9syPcSmzTBWU8pWXwEKfFocltRQNRUFK3keQmPCpGmhTxOA=="}
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "links" ("originallink", "shortlink", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["originallink", "http://www.trypap.com/"], ["shortlink", "KdH"], ["created_at", "2016-02-23 20:53:30.685631"], ["updated_at", "2016-02-23 20:53:30.685631"]]
+  [1m[35m (1.0ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.3ms)[0m  commit transaction
+Redirected to http://localhost:3000/KdH
+Completed 302 Found in 7ms (ActiveRecord: 2.0ms)
+
+
+Started GET "/KdH" for ::1 at 2016-02-23 21:53:30 +0100
+Processing by LinkController#show as HTML
+  Parameters: {"shortlink"=>"KdH"}
+  [1m[36mLink Load (0.1ms)[0m  [1mSELECT  "links".* FROM "links" WHERE "links"."shortlink" = ?  ORDER BY "links"."id" ASC LIMIT 1[0m  [["shortlink", "KdH"]]
+Redirected to http://www.trypap.com/
+Completed 302 Found in 2ms (ActiveRecord: 0.1ms)
+
+
+Started POST "/shortlink" for ::1 at 2016-02-23 21:53:59 +0100
+Processing by LinkController#shortlink as HTML
+  Parameters: {"link"=>{"originallink"=>"http://www.movenowthinklater.com/"}, "authenticity_token"=>"XWJr40Ah0UAhrGtku52QePnazUJS+LjmZwuaYfT9syPcSmzTBWU8pWXwEKfFocltRQNRUFK3keQmPCpGmhTxOA=="}
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "links" ("originallink", "shortlink", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["originallink", "http://www.movenowthinklater.com/"], ["shortlink", "nYD"], ["created_at", "2016-02-23 20:53:59.037616"], ["updated_at", "2016-02-23 20:53:59.037616"]]
+  [1m[35m (0.7ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  commit transaction
+Redirected to http://localhost:3000/nYD
+Completed 302 Found in 5ms (ActiveRecord: 1.1ms)
+
+
+Started GET "/nYD" for ::1 at 2016-02-23 21:53:59 +0100
+Processing by LinkController#show as HTML
+  Parameters: {"shortlink"=>"nYD"}
+  [1m[36mLink Load (0.1ms)[0m  [1mSELECT  "links".* FROM "links" WHERE "links"."shortlink" = ?  ORDER BY "links"."id" ASC LIMIT 1[0m  [["shortlink", "nYD"]]
+Redirected to http://www.movenowthinklater.com/
+Completed 302 Found in 1ms (ActiveRecord: 0.1ms)
+
+
+Started POST "/shortlink" for ::1 at 2016-02-23 21:54:24 +0100
+Processing by LinkController#shortlink as HTML
+  Parameters: {"link"=>{"originallink"=>"http://ducksarethebest.com/"}, "authenticity_token"=>"XWJr40Ah0UAhrGtku52QePnazUJS+LjmZwuaYfT9syPcSmzTBWU8pWXwEKfFocltRQNRUFK3keQmPCpGmhTxOA=="}
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "links" ("originallink", "shortlink", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["originallink", "http://ducksarethebest.com/"], ["shortlink", "BJs"], ["created_at", "2016-02-23 20:54:24.007205"], ["updated_at", "2016-02-23 20:54:24.007205"]]
+  [1m[35m (0.7ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  commit transaction
+Redirected to http://localhost:3000/BJs
+Completed 302 Found in 5ms (ActiveRecord: 1.2ms)
+
+
+Started GET "/BJs" for ::1 at 2016-02-23 21:54:24 +0100
+Processing by LinkController#show as HTML
+  Parameters: {"shortlink"=>"BJs"}
+  [1m[36mLink Load (0.1ms)[0m  [1mSELECT  "links".* FROM "links" WHERE "links"."shortlink" = ?  ORDER BY "links"."id" ASC LIMIT 1[0m  [["shortlink", "BJs"]]
+Redirected to http://ducksarethebest.com/
+Completed 302 Found in 2ms (ActiveRecord: 0.1ms)
+
+
+Started POST "/shortlink" for ::1 at 2016-02-23 21:54:44 +0100
+Processing by LinkController#shortlink as HTML
+  Parameters: {"link"=>{"originallink"=>"http://www.rrrgggbbb.com/"}, "authenticity_token"=>"XWJr40Ah0UAhrGtku52QePnazUJS+LjmZwuaYfT9syPcSmzTBWU8pWXwEKfFocltRQNRUFK3keQmPCpGmhTxOA=="}
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.6ms)[0m  [1mINSERT INTO "links" ("originallink", "shortlink", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["originallink", "http://www.rrrgggbbb.com/"], ["shortlink", "xOJ"], ["created_at", "2016-02-23 20:54:44.576970"], ["updated_at", "2016-02-23 20:54:44.576970"]]
+  [1m[35m (0.7ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  commit transaction
+Redirected to http://localhost:3000/xOJ
+Completed 302 Found in 5ms (ActiveRecord: 1.5ms)
+
+
+Started GET "/xOJ" for ::1 at 2016-02-23 21:54:44 +0100
+Processing by LinkController#show as HTML
+  Parameters: {"shortlink"=>"xOJ"}
+  [1m[36mLink Load (0.1ms)[0m  [1mSELECT  "links".* FROM "links" WHERE "links"."shortlink" = ?  ORDER BY "links"."id" ASC LIMIT 1[0m  [["shortlink", "xOJ"]]
+Redirected to http://www.rrrgggbbb.com/
+Completed 302 Found in 1ms (ActiveRecord: 0.1ms)
+
+
+Started POST "/shortlink" for ::1 at 2016-02-23 21:55:22 +0100
+Processing by LinkController#shortlink as HTML
+  Parameters: {"link"=>{"originallink"=>"http://www.staggeringbeauty.com/"}, "authenticity_token"=>"XWJr40Ah0UAhrGtku52QePnazUJS+LjmZwuaYfT9syPcSmzTBWU8pWXwEKfFocltRQNRUFK3keQmPCpGmhTxOA=="}
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "links" ("originallink", "shortlink", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["originallink", "http://www.staggeringbeauty.com/"], ["shortlink", "CnW"], ["created_at", "2016-02-23 20:55:22.574093"], ["updated_at", "2016-02-23 20:55:22.574093"]]
+  [1m[35m (0.8ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  commit transaction
+Redirected to http://localhost:3000/CnW
+Completed 302 Found in 5ms (ActiveRecord: 1.3ms)
+
+
+Started GET "/CnW" for ::1 at 2016-02-23 21:55:22 +0100
+Processing by LinkController#show as HTML
+  Parameters: {"shortlink"=>"CnW"}
+  [1m[36mLink Load (0.1ms)[0m  [1mSELECT  "links".* FROM "links" WHERE "links"."shortlink" = ?  ORDER BY "links"."id" ASC LIMIT 1[0m  [["shortlink", "CnW"]]
+Redirected to http://www.staggeringbeauty.com/
+Completed 302 Found in 1ms (ActiveRecord: 0.1ms)
+
+
+Started POST "/shortlink" for ::1 at 2016-02-23 22:36:42 +0100
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by LinkController#shortlink as HTML
+  Parameters: {"link"=>{"originallink"=>"http://www.staggeringbeauty.com/"}, "authenticity_token"=>"XWJr40Ah0UAhrGtku52QePnazUJS+LjmZwuaYfT9syPcSmzTBWU8pWXwEKfFocltRQNRUFK3keQmPCpGmhTxOA=="}
+Completed 500 Internal Server Error in 11ms (ActiveRecord: 0.0ms)
+
+NoMethodError (undefined method `check_http' for #<LinkController:0x007f9bb6ec5c80>):
+  app/controllers/link_controller.rb:5:in `shortlink'
+
+
+  Rendered /Users/m.figand/.rvm/gems/ruby-2.2.3/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (5.6ms)
+  Rendered /Users/m.figand/.rvm/gems/ruby-2.2.3/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.1ms)
+  Rendered /Users/m.figand/.rvm/gems/ruby-2.2.3/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.8ms)
+  Rendered /Users/m.figand/.rvm/gems/ruby-2.2.3/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (52.2ms)
+  Rendered /Users/m.figand/.rvm/gems/ruby-2.2.3/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.4ms)
+  Rendered /Users/m.figand/.rvm/gems/ruby-2.2.3/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/m.figand/.rvm/gems/ruby-2.2.3/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/m.figand/.rvm/gems/ruby-2.2.3/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/m.figand/.rvm/gems/ruby-2.2.3/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (43.3ms)
+  Rendered /Users/m.figand/.rvm/gems/ruby-2.2.3/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/m.figand/.rvm/gems/ruby-2.2.3/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.5ms)
+  Rendered /Users/m.figand/.rvm/gems/ruby-2.2.3/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (92.1ms)
+
+
+Started POST "/shortlink" for ::1 at 2016-02-23 22:37:13 +0100
+
+SyntaxError (/Users/m.figand/Documents/IRONHACK/Ironhack-BootCamp/Week_4/Day_2/shortener/app/controllers/link_controller.rb:5: syntax error, unexpected '.'
+    url_user = .check_http(@originallink)
+                ^):
+  app/controllers/link_controller.rb:5: syntax error, unexpected '.'
+
+
+  Rendered /Users/m.figand/.rvm/gems/ruby-2.2.3/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (3.4ms)
+  Rendered /Users/m.figand/.rvm/gems/ruby-2.2.3/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.6ms)
+  Rendered /Users/m.figand/.rvm/gems/ruby-2.2.3/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.0ms)
+  Rendered /Users/m.figand/.rvm/gems/ruby-2.2.3/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (47.8ms)
+  Rendered /Users/m.figand/.rvm/gems/ruby-2.2.3/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.3ms)
+  Rendered /Users/m.figand/.rvm/gems/ruby-2.2.3/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/m.figand/.rvm/gems/ruby-2.2.3/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/m.figand/.rvm/gems/ruby-2.2.3/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/m.figand/.rvm/gems/ruby-2.2.3/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (40.1ms)
+  Rendered /Users/m.figand/.rvm/gems/ruby-2.2.3/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/m.figand/.rvm/gems/ruby-2.2.3/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/m.figand/.rvm/gems/ruby-2.2.3/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (85.7ms)
+
+
+Started POST "/shortlink" for ::1 at 2016-02-23 22:37:26 +0100
+Processing by LinkController#shortlink as HTML
+  Parameters: {"link"=>{"originallink"=>"http://www.staggeringbeauty.com/"}, "authenticity_token"=>"XWJr40Ah0UAhrGtku52QePnazUJS+LjmZwuaYfT9syPcSmzTBWU8pWXwEKfFocltRQNRUFK3keQmPCpGmhTxOA=="}
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.0ms)
+
+NoMethodError (undefined method `check_http' for #<Class:0x007f9bb8040230>):
+  app/controllers/link_controller.rb:5:in `shortlink'
+
+
+  Rendered /Users/m.figand/.rvm/gems/ruby-2.2.3/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (4.1ms)
+  Rendered /Users/m.figand/.rvm/gems/ruby-2.2.3/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.9ms)
+  Rendered /Users/m.figand/.rvm/gems/ruby-2.2.3/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.8ms)
+  Rendered /Users/m.figand/.rvm/gems/ruby-2.2.3/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (48.3ms)
+  Rendered /Users/m.figand/.rvm/gems/ruby-2.2.3/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.3ms)
+  Rendered /Users/m.figand/.rvm/gems/ruby-2.2.3/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/m.figand/.rvm/gems/ruby-2.2.3/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/m.figand/.rvm/gems/ruby-2.2.3/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/m.figand/.rvm/gems/ruby-2.2.3/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (39.4ms)
+  Rendered /Users/m.figand/.rvm/gems/ruby-2.2.3/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/m.figand/.rvm/gems/ruby-2.2.3/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/m.figand/.rvm/gems/ruby-2.2.3/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (83.6ms)
