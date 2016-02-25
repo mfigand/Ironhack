@@ -2,7 +2,7 @@ class LinkController < ApplicationController
 
   def shortlink
     @originallink = params[:link][:originallink]
-    url_user = check_http(@originallink)
+    url_user = Link.check_http(@originallink)
     randomKey = [*('A'..'Z'),*('a'..'z')].shuffle[0,3].join
     link = Link.create(originallink: url_user, shortlink: randomKey)
     link.save

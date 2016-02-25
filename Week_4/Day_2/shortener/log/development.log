@@ -1566,3 +1566,443 @@ NoMethodError (undefined method `check_http' for #<Class:0x007f9bb8040230>):
   Rendered /Users/m.figand/.rvm/gems/ruby-2.2.3/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
   Rendered /Users/m.figand/.rvm/gems/ruby-2.2.3/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.3ms)
   Rendered /Users/m.figand/.rvm/gems/ruby-2.2.3/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (83.6ms)
+
+
+Started GET "/projects/25" for ::1 at 2016-02-24 14:05:14 +0100
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+
+ActionController::RoutingError (No route matches [GET] "/projects/25"):
+  actionpack (4.2.5.1) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  web-console (2.3.0) lib/web_console/middleware.rb:28:in `block in call'
+  web-console (2.3.0) lib/web_console/middleware.rb:18:in `catch'
+  web-console (2.3.0) lib/web_console/middleware.rb:18:in `call'
+  actionpack (4.2.5.1) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.5.1) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.5.1) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.5.1) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.5.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.5.1) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.5.1) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.5.1) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.4) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.4) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.5.1) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.5.1) lib/action_dispatch/middleware/static.rb:116:in `call'
+  rack (1.6.4) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.5.1) lib/rails/engine.rb:518:in `call'
+  railties (4.2.5.1) lib/rails/application.rb:165:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  rack (1.6.4) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.4) lib/rack/handler/webrick.rb:88:in `service'
+  /Users/m.figand/.rvm/rubies/ruby-2.2.3/lib/ruby/2.2.0/webrick/httpserver.rb:138:in `service'
+  /Users/m.figand/.rvm/rubies/ruby-2.2.3/lib/ruby/2.2.0/webrick/httpserver.rb:94:in `run'
+  /Users/m.figand/.rvm/rubies/ruby-2.2.3/lib/ruby/2.2.0/webrick/server.rb:294:in `block in start_thread'
+
+
+  Rendered /Users/m.figand/.rvm/gems/ruby-2.2.3/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.8ms)
+  Rendered /Users/m.figand/.rvm/gems/ruby-2.2.3/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/routes/_route.html.erb (1.0ms)
+  Rendered /Users/m.figand/.rvm/gems/ruby-2.2.3/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/routes/_table.html.erb (10.4ms)
+  Rendered /Users/m.figand/.rvm/gems/ruby-2.2.3/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (12.6ms)
+  Rendered /Users/m.figand/.rvm/gems/ruby-2.2.3/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (92.2ms)
+  Rendered /Users/m.figand/.rvm/gems/ruby-2.2.3/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.3ms)
+  Rendered /Users/m.figand/.rvm/gems/ruby-2.2.3/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/m.figand/.rvm/gems/ruby-2.2.3/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/m.figand/.rvm/gems/ruby-2.2.3/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/m.figand/.rvm/gems/ruby-2.2.3/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (60.8ms)
+  Rendered /Users/m.figand/.rvm/gems/ruby-2.2.3/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/m.figand/.rvm/gems/ruby-2.2.3/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.6ms)
+  Rendered /Users/m.figand/.rvm/gems/ruby-2.2.3/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (115.1ms)
+
+
+Started GET "/" for ::1 at 2016-02-24 14:05:16 +0100
+Processing by LinkController#home as HTML
+  Rendered link/home.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 164ms (Views: 163.2ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/shortlink" for ::1 at 2016-02-24 14:05:34 +0100
+Processing by LinkController#shortlink as HTML
+  Parameters: {"link"=>{"originallink"=>"http://thatsthefinger.com/"}, "authenticity_token"=>"TiolSaTxOQHUHJu3BnF3hRL/wj9jpC1u/IvYF1RFYszPAiJ54bXU5JBA4HR4TS6QriZeLWPrBGy9vGgwOqwg1w=="}
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.0ms)
+
+NoMethodError (undefined method `check_http' for "http://thatsthefinger.com/":String):
+  app/controllers/link_controller.rb:5:in `shortlink'
+
+
+  Rendered /Users/m.figand/.rvm/gems/ruby-2.2.3/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (4.0ms)
+  Rendered /Users/m.figand/.rvm/gems/ruby-2.2.3/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.2ms)
+  Rendered /Users/m.figand/.rvm/gems/ruby-2.2.3/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.8ms)
+  Rendered /Users/m.figand/.rvm/gems/ruby-2.2.3/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (51.6ms)
+  Rendered /Users/m.figand/.rvm/gems/ruby-2.2.3/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.3ms)
+  Rendered /Users/m.figand/.rvm/gems/ruby-2.2.3/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/m.figand/.rvm/gems/ruby-2.2.3/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/m.figand/.rvm/gems/ruby-2.2.3/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/m.figand/.rvm/gems/ruby-2.2.3/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (42.7ms)
+  Rendered /Users/m.figand/.rvm/gems/ruby-2.2.3/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.2ms)
+  Rendered /Users/m.figand/.rvm/gems/ruby-2.2.3/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/m.figand/.rvm/gems/ruby-2.2.3/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (91.6ms)
+
+
+Started GET "/" for ::1 at 2016-02-25 14:08:30 +0100
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by LinkController#home as HTML
+  Rendered link/home.html.erb within layouts/application (1.6ms)
+Completed 200 OK in 200ms (Views: 190.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/shortlink" for ::1 at 2016-02-25 14:08:37 +0100
+Processing by LinkController#shortlink as HTML
+  Parameters: {"link"=>{"originallink"=>"https://www.google.es/?gfe_rd=cr&ei=PorMVsmqNevt8welzae4Ag&gws_rd=ssl"}, "authenticity_token"=>"L+dJe3XMevKpRVNZWBBILamNKybKBUk5EO+sgogZlWiuz05LMIiXF+0ZKJomLBE4FVS3NMpKYDtR2Byl5vDXcw=="}
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.0ms)
+
+NoMethodError (undefined method `check_http' for #<Class:0x007fd6f9c8ceb8>):
+  app/controllers/link_controller.rb:5:in `shortlink'
+
+
+  Rendered /Users/m.figand/.rvm/gems/ruby-2.2.3/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (4.6ms)
+  Rendered /Users/m.figand/.rvm/gems/ruby-2.2.3/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.2ms)
+  Rendered /Users/m.figand/.rvm/gems/ruby-2.2.3/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.4ms)
+  Rendered /Users/m.figand/.rvm/gems/ruby-2.2.3/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (55.2ms)
+  Rendered /Users/m.figand/.rvm/gems/ruby-2.2.3/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.4ms)
+  Rendered /Users/m.figand/.rvm/gems/ruby-2.2.3/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.5ms)
+  Rendered /Users/m.figand/.rvm/gems/ruby-2.2.3/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/m.figand/.rvm/gems/ruby-2.2.3/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/m.figand/.rvm/gems/ruby-2.2.3/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (51.0ms)
+  Rendered /Users/m.figand/.rvm/gems/ruby-2.2.3/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/m.figand/.rvm/gems/ruby-2.2.3/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/m.figand/.rvm/gems/ruby-2.2.3/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (107.9ms)
+
+
+Started POST "/shortlink" for ::1 at 2016-02-25 14:09:50 +0100
+Processing by LinkController#shortlink as HTML
+  Parameters: {"link"=>{"originallink"=>"https://www.google.es/?gfe_rd=cr&ei=PorMVsmqNevt8welzae4Ag&gws_rd=ssl"}, "authenticity_token"=>"L+dJe3XMevKpRVNZWBBILamNKybKBUk5EO+sgogZlWiuz05LMIiXF+0ZKJomLBE4FVS3NMpKYDtR2Byl5vDXcw=="}
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.8ms)[0m  [1mINSERT INTO "links" ("originallink", "shortlink", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["originallink", "http://https://www.google.es/?gfe_rd=cr&ei=PorMVsmqNevt8welzae4Ag&gws_rd=ssl"], ["shortlink", "TLa"], ["created_at", "2016-02-25 13:09:50.575765"], ["updated_at", "2016-02-25 13:09:50.575765"]]
+  [1m[35m (0.6ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  commit transaction
+Redirected to http://localhost:3000/TLa
+Completed 302 Found in 15ms (ActiveRecord: 1.9ms)
+
+
+Started GET "/TLa" for ::1 at 2016-02-25 14:09:50 +0100
+Processing by LinkController#show as HTML
+  Parameters: {"shortlink"=>"TLa"}
+  [1m[36mLink Load (0.2ms)[0m  [1mSELECT  "links".* FROM "links" WHERE "links"."shortlink" = ?  ORDER BY "links"."id" ASC LIMIT 1[0m  [["shortlink", "TLa"]]
+Redirected to http://https://www.google.es/?gfe_rd=cr&ei=PorMVsmqNevt8welzae4Ag&gws_rd=ssl
+Completed 302 Found in 10ms (ActiveRecord: 0.2ms)
+
+
+Started POST "/shortlink" for ::1 at 2016-02-25 14:09:54 +0100
+Processing by LinkController#shortlink as HTML
+  Parameters: {"link"=>{"originallink"=>"https://www.google.es/?gfe_rd=cr&ei=PorMVsmqNevt8welzae4Ag&gws_rd=ssl"}, "authenticity_token"=>"L+dJe3XMevKpRVNZWBBILamNKybKBUk5EO+sgogZlWiuz05LMIiXF+0ZKJomLBE4FVS3NMpKYDtR2Byl5vDXcw=="}
+  [1m[35m (0.2ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "links" ("originallink", "shortlink", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["originallink", "http://https://www.google.es/?gfe_rd=cr&ei=PorMVsmqNevt8welzae4Ag&gws_rd=ssl"], ["shortlink", "NEC"], ["created_at", "2016-02-25 13:09:54.270445"], ["updated_at", "2016-02-25 13:09:54.270445"]]
+  [1m[35m (1.9ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  commit transaction
+Redirected to http://localhost:3000/NEC
+Completed 302 Found in 8ms (ActiveRecord: 2.5ms)
+
+
+Started GET "/NEC" for ::1 at 2016-02-25 14:09:54 +0100
+Processing by LinkController#show as HTML
+  Parameters: {"shortlink"=>"NEC"}
+  [1m[36mLink Load (0.4ms)[0m  [1mSELECT  "links".* FROM "links" WHERE "links"."shortlink" = ?  ORDER BY "links"."id" ASC LIMIT 1[0m  [["shortlink", "NEC"]]
+Redirected to http://https://www.google.es/?gfe_rd=cr&ei=PorMVsmqNevt8welzae4Ag&gws_rd=ssl
+Completed 302 Found in 2ms (ActiveRecord: 0.4ms)
+
+
+Started GET "/" for ::1 at 2016-02-25 14:10:00 +0100
+Processing by LinkController#home as HTML
+  Rendered link/home.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 16ms (Views: 15.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/link.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-02-25 14:10:00 +0100
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for ::1 at 2016-02-25 14:10:00 +0100
+
+
+Started GET "/assets/jquery_ujs.self-d602bdfe68ffc63b9f9cc512872aa3cfff046228a0a36e90dd476e8ef54c1b09.js?body=1" for ::1 at 2016-02-25 14:10:00 +0100
+
+
+Started GET "/assets/jquery.self-c64a74367bda6ef8b860f19e74df08927ca99d2be2ac934e9e92d5fd361e0da4.js?body=1" for ::1 at 2016-02-25 14:10:00 +0100
+
+
+Started GET "/assets/link.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-02-25 14:10:00 +0100
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2016-02-25 14:10:00 +0100
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2016-02-25 14:10:00 +0100
+
+
+Started POST "/shortlink" for ::1 at 2016-02-25 14:10:05 +0100
+Processing by LinkController#shortlink as HTML
+  Parameters: {"link"=>{"originallink"=>"https://www.google.es/?gfe_rd=cr&ei=PorMVsmqNevt8welzae4Ag&gws_rd=ssl"}, "authenticity_token"=>"4RLogwqWl50f3j0+KnSLimx6DZHfs5t8tH7BXWFhX8NgOu+zT9J6eFuCRv1USNKf0KORg9/8sn71SXF6D4gd2A=="}
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "links" ("originallink", "shortlink", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["originallink", "http://https://www.google.es/?gfe_rd=cr&ei=PorMVsmqNevt8welzae4Ag&gws_rd=ssl"], ["shortlink", "BCl"], ["created_at", "2016-02-25 13:10:05.716049"], ["updated_at", "2016-02-25 13:10:05.716049"]]
+  [1m[35m (0.7ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  commit transaction
+Redirected to http://localhost:3000/BCl
+Completed 302 Found in 6ms (ActiveRecord: 1.1ms)
+
+
+Started GET "/BCl" for ::1 at 2016-02-25 14:10:05 +0100
+Processing by LinkController#show as HTML
+  Parameters: {"shortlink"=>"BCl"}
+  [1m[36mLink Load (0.2ms)[0m  [1mSELECT  "links".* FROM "links" WHERE "links"."shortlink" = ?  ORDER BY "links"."id" ASC LIMIT 1[0m  [["shortlink", "BCl"]]
+Redirected to http://https://www.google.es/?gfe_rd=cr&ei=PorMVsmqNevt8welzae4Ag&gws_rd=ssl
+Completed 302 Found in 3ms (ActiveRecord: 0.2ms)
+
+
+Started POST "/shortlink" for ::1 at 2016-02-25 14:11:06 +0100
+Processing by LinkController#shortlink as HTML
+  Parameters: {"link"=>{"originallink"=>"https://www.google.es/?gfe_rd=cr&ei=PorMVsmqNevt8welzae4Ag&gws_rd=ssl"}, "authenticity_token"=>"4RLogwqWl50f3j0+KnSLimx6DZHfs5t8tH7BXWFhX8NgOu+zT9J6eFuCRv1USNKf0KORg9/8sn71SXF6D4gd2A=="}
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "links" ("originallink", "shortlink", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["originallink", "http://https://www.google.es/?gfe_rd=cr&ei=PorMVsmqNevt8welzae4Ag&gws_rd=ssl"], ["shortlink", "LlB"], ["created_at", "2016-02-25 13:11:06.247382"], ["updated_at", "2016-02-25 13:11:06.247382"]]
+  [1m[35m (0.6ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  commit transaction
+Redirected to http://localhost:3000/LlB
+Completed 302 Found in 5ms (ActiveRecord: 1.0ms)
+
+
+Started GET "/LlB" for ::1 at 2016-02-25 14:11:06 +0100
+Processing by LinkController#show as HTML
+  Parameters: {"shortlink"=>"LlB"}
+  [1m[36mLink Load (0.1ms)[0m  [1mSELECT  "links".* FROM "links" WHERE "links"."shortlink" = ?  ORDER BY "links"."id" ASC LIMIT 1[0m  [["shortlink", "LlB"]]
+Redirected to http://https://www.google.es/?gfe_rd=cr&ei=PorMVsmqNevt8welzae4Ag&gws_rd=ssl
+Completed 302 Found in 2ms (ActiveRecord: 0.1ms)
+
+
+Started GET "/" for ::1 at 2016-02-25 14:13:34 +0100
+Processing by LinkController#home as HTML
+  Rendered link/home.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 21ms (Views: 20.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/link.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-02-25 14:13:34 +0100
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for ::1 at 2016-02-25 14:13:34 +0100
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2016-02-25 14:13:34 +0100
+
+
+Started GET "/assets/jquery.self-c64a74367bda6ef8b860f19e74df08927ca99d2be2ac934e9e92d5fd361e0da4.js?body=1" for ::1 at 2016-02-25 14:13:34 +0100
+
+
+Started GET "/assets/link.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-02-25 14:13:34 +0100
+
+
+Started GET "/assets/jquery_ujs.self-d602bdfe68ffc63b9f9cc512872aa3cfff046228a0a36e90dd476e8ef54c1b09.js?body=1" for ::1 at 2016-02-25 14:13:34 +0100
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2016-02-25 14:13:34 +0100
+
+
+Started POST "/shortlink" for ::1 at 2016-02-25 14:13:39 +0100
+Processing by LinkController#shortlink as HTML
+  Parameters: {"link"=>{"originallink"=>"https://www.google.es/webhp?sourceid=chrome-instant&ion=1&espv=2&ie=UTF-8#q=helpers%20select%20rails"}, "authenticity_token"=>"vBCQBs3qjbnuveHl0JE/B7apmnV8cYIgYFPNOqaQg7g9OJc2iK5gXKrhmiaurWYSCnAGZ3w+qyIhZH0dyHnBow=="}
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "links" ("originallink", "shortlink", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["originallink", "http://https://www.google.es/webhp?sourceid=chrome-instant&ion=1&espv=2&ie=UTF-8#q=helpers%20select%20rails"], ["shortlink", "jUu"], ["created_at", "2016-02-25 13:13:39.094336"], ["updated_at", "2016-02-25 13:13:39.094336"]]
+  [1m[35m (0.6ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+Redirected to http://localhost:3000/jUu
+Completed 302 Found in 10ms (ActiveRecord: 1.5ms)
+
+
+Started GET "/jUu" for ::1 at 2016-02-25 14:13:39 +0100
+Processing by LinkController#show as HTML
+  Parameters: {"shortlink"=>"jUu"}
+  [1m[36mLink Load (0.6ms)[0m  [1mSELECT  "links".* FROM "links" WHERE "links"."shortlink" = ?  ORDER BY "links"."id" ASC LIMIT 1[0m  [["shortlink", "jUu"]]
+Redirected to http://https://www.google.es/webhp?sourceid=chrome-instant&ion=1&espv=2&ie=UTF-8#q=helpers%20select%20rails
+Completed 302 Found in 4ms (ActiveRecord: 0.6ms)
+
+
+Started POST "/shortlink" for ::1 at 2016-02-25 14:14:12 +0100
+Processing by LinkController#shortlink as HTML
+  Parameters: {"link"=>{"originallink"=>"google.com"}, "authenticity_token"=>"vBCQBs3qjbnuveHl0JE/B7apmnV8cYIgYFPNOqaQg7g9OJc2iK5gXKrhmiaurWYSCnAGZ3w+qyIhZH0dyHnBow=="}
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "links" ("originallink", "shortlink", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["originallink", "http://google.com"], ["shortlink", "ebK"], ["created_at", "2016-02-25 13:14:12.241644"], ["updated_at", "2016-02-25 13:14:12.241644"]]
+  [1m[35m (0.7ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  commit transaction
+Redirected to http://localhost:3000/ebK
+Completed 302 Found in 5ms (ActiveRecord: 1.2ms)
+
+
+Started GET "/ebK" for ::1 at 2016-02-25 14:14:12 +0100
+Processing by LinkController#show as HTML
+  Parameters: {"shortlink"=>"ebK"}
+  [1m[36mLink Load (0.2ms)[0m  [1mSELECT  "links".* FROM "links" WHERE "links"."shortlink" = ?  ORDER BY "links"."id" ASC LIMIT 1[0m  [["shortlink", "ebK"]]
+Redirected to http://google.com
+Completed 302 Found in 3ms (ActiveRecord: 0.2ms)
+
+
+Started POST "/shortlink" for ::1 at 2016-02-25 14:14:25 +0100
+Processing by LinkController#shortlink as HTML
+  Parameters: {"link"=>{"originallink"=>"google.com"}, "authenticity_token"=>"vBCQBs3qjbnuveHl0JE/B7apmnV8cYIgYFPNOqaQg7g9OJc2iK5gXKrhmiaurWYSCnAGZ3w+qyIhZH0dyHnBow=="}
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "links" ("originallink", "shortlink", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["originallink", "http://google.com"], ["shortlink", "iSf"], ["created_at", "2016-02-25 13:14:25.063197"], ["updated_at", "2016-02-25 13:14:25.063197"]]
+  [1m[35m (0.6ms)[0m  commit transaction
+  [1m[36m (0.6ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  commit transaction
+Redirected to http://localhost:3000/iSf
+Completed 302 Found in 7ms (ActiveRecord: 1.9ms)
+
+
+Started GET "/iSf" for ::1 at 2016-02-25 14:14:25 +0100
+Processing by LinkController#show as HTML
+  Parameters: {"shortlink"=>"iSf"}
+  [1m[36mLink Load (0.3ms)[0m  [1mSELECT  "links".* FROM "links" WHERE "links"."shortlink" = ?  ORDER BY "links"."id" ASC LIMIT 1[0m  [["shortlink", "iSf"]]
+Redirected to http://google.com
+Completed 302 Found in 4ms (ActiveRecord: 0.3ms)
+
+
+Started POST "/shortlink" for ::1 at 2016-02-25 14:14:35 +0100
+Processing by LinkController#shortlink as HTML
+  Parameters: {"link"=>{"originallink"=>"https://www.google.es/?gfe_rd=cr&ei=Mf7OVvLTBOis8wfsnrSYCw&gws_rd=ssl"}, "authenticity_token"=>"vBCQBs3qjbnuveHl0JE/B7apmnV8cYIgYFPNOqaQg7g9OJc2iK5gXKrhmiaurWYSCnAGZ3w+qyIhZH0dyHnBow=="}
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "links" ("originallink", "shortlink", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["originallink", "http://https://www.google.es/?gfe_rd=cr&ei=Mf7OVvLTBOis8wfsnrSYCw&gws_rd=ssl"], ["shortlink", "XlH"], ["created_at", "2016-02-25 13:14:35.161453"], ["updated_at", "2016-02-25 13:14:35.161453"]]
+  [1m[35m (1.0ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  commit transaction
+Redirected to http://localhost:3000/XlH
+Completed 302 Found in 5ms (ActiveRecord: 1.5ms)
+
+
+Started GET "/XlH" for ::1 at 2016-02-25 14:14:35 +0100
+Processing by LinkController#show as HTML
+  Parameters: {"shortlink"=>"XlH"}
+  [1m[36mLink Load (0.2ms)[0m  [1mSELECT  "links".* FROM "links" WHERE "links"."shortlink" = ?  ORDER BY "links"."id" ASC LIMIT 1[0m  [["shortlink", "XlH"]]
+Redirected to http://https://www.google.es/?gfe_rd=cr&ei=Mf7OVvLTBOis8wfsnrSYCw&gws_rd=ssl
+Completed 302 Found in 3ms (ActiveRecord: 0.2ms)
+
+
+Started POST "/shortlink" for ::1 at 2016-02-25 14:15:03 +0100
+Processing by LinkController#shortlink as HTML
+  Parameters: {"link"=>{"originallink"=>"www.google.com"}, "authenticity_token"=>"vBCQBs3qjbnuveHl0JE/B7apmnV8cYIgYFPNOqaQg7g9OJc2iK5gXKrhmiaurWYSCnAGZ3w+qyIhZH0dyHnBow=="}
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "links" ("originallink", "shortlink", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["originallink", "http://www.google.com"], ["shortlink", "jxJ"], ["created_at", "2016-02-25 13:15:03.831786"], ["updated_at", "2016-02-25 13:15:03.831786"]]
+  [1m[35m (0.5ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  commit transaction
+Redirected to http://localhost:3000/jxJ
+Completed 302 Found in 4ms (ActiveRecord: 0.9ms)
+
+
+Started GET "/jxJ" for ::1 at 2016-02-25 14:15:03 +0100
+Processing by LinkController#show as HTML
+  Parameters: {"shortlink"=>"jxJ"}
+  [1m[36mLink Load (0.2ms)[0m  [1mSELECT  "links".* FROM "links" WHERE "links"."shortlink" = ?  ORDER BY "links"."id" ASC LIMIT 1[0m  [["shortlink", "jxJ"]]
+Redirected to http://www.google.com
+Completed 302 Found in 2ms (ActiveRecord: 0.2ms)
+
+
+Started POST "/shortlink" for ::1 at 2016-02-25 14:17:24 +0100
+Processing by LinkController#shortlink as HTML
+  Parameters: {"link"=>{"originallink"=>"http://www.staggeringbeauty.com/"}, "authenticity_token"=>"vBCQBs3qjbnuveHl0JE/B7apmnV8cYIgYFPNOqaQg7g9OJc2iK5gXKrhmiaurWYSCnAGZ3w+qyIhZH0dyHnBow=="}
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "links" ("originallink", "shortlink", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["originallink", "http://www.staggeringbeauty.com/"], ["shortlink", "yex"], ["created_at", "2016-02-25 13:17:24.192489"], ["updated_at", "2016-02-25 13:17:24.192489"]]
+  [1m[35m (1.5ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  commit transaction
+Redirected to http://localhost:3000/yex
+Completed 302 Found in 5ms (ActiveRecord: 1.9ms)
+
+
+Started GET "/yex" for ::1 at 2016-02-25 14:17:24 +0100
+Processing by LinkController#show as HTML
+  Parameters: {"shortlink"=>"yex"}
+  [1m[36mLink Load (0.3ms)[0m  [1mSELECT  "links".* FROM "links" WHERE "links"."shortlink" = ?  ORDER BY "links"."id" ASC LIMIT 1[0m  [["shortlink", "yex"]]
+Redirected to http://www.staggeringbeauty.com/
+Completed 302 Found in 3ms (ActiveRecord: 0.3ms)
+
+
+Started POST "/shortlink" for ::1 at 2016-02-25 14:17:53 +0100
+Processing by LinkController#shortlink as HTML
+  Parameters: {"link"=>{"originallink"=>"https://www.google.es/?gfe_rd=cr&ei=9f7OVoHfBubt8wecsbm4DA"}, "authenticity_token"=>"vBCQBs3qjbnuveHl0JE/B7apmnV8cYIgYFPNOqaQg7g9OJc2iK5gXKrhmiaurWYSCnAGZ3w+qyIhZH0dyHnBow=="}
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "links" ("originallink", "shortlink", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["originallink", "http://https://www.google.es/?gfe_rd=cr&ei=9f7OVoHfBubt8wecsbm4DA"], ["shortlink", "nqc"], ["created_at", "2016-02-25 13:17:53.044597"], ["updated_at", "2016-02-25 13:17:53.044597"]]
+  [1m[35m (1.6ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  commit transaction
+Redirected to http://localhost:3000/nqc
+Completed 302 Found in 5ms (ActiveRecord: 2.1ms)
+
+
+Started GET "/nqc" for ::1 at 2016-02-25 14:17:53 +0100
+Processing by LinkController#show as HTML
+  Parameters: {"shortlink"=>"nqc"}
+  [1m[36mLink Load (0.2ms)[0m  [1mSELECT  "links".* FROM "links" WHERE "links"."shortlink" = ?  ORDER BY "links"."id" ASC LIMIT 1[0m  [["shortlink", "nqc"]]
+Redirected to http://https://www.google.es/?gfe_rd=cr&ei=9f7OVoHfBubt8wecsbm4DA
+Completed 302 Found in 2ms (ActiveRecord: 0.2ms)
+
+
+Started POST "/shortlink" for ::1 at 2016-02-25 14:18:47 +0100
+Processing by LinkController#shortlink as HTML
+  Parameters: {"link"=>{"originallink"=>"http://www.staggeringbeauty.com/"}, "authenticity_token"=>"vBCQBs3qjbnuveHl0JE/B7apmnV8cYIgYFPNOqaQg7g9OJc2iK5gXKrhmiaurWYSCnAGZ3w+qyIhZH0dyHnBow=="}
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "links" ("originallink", "shortlink", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["originallink", "http://www.staggeringbeauty.com/"], ["shortlink", "kXs"], ["created_at", "2016-02-25 13:18:47.997737"], ["updated_at", "2016-02-25 13:18:47.997737"]]
+  [1m[35m (0.6ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  commit transaction
+Redirected to http://localhost:3000/kXs
+Completed 302 Found in 4ms (ActiveRecord: 1.0ms)
+
+
+Started GET "/kXs" for ::1 at 2016-02-25 14:18:48 +0100
+Processing by LinkController#show as HTML
+  Parameters: {"shortlink"=>"kXs"}
+  [1m[36mLink Load (0.2ms)[0m  [1mSELECT  "links".* FROM "links" WHERE "links"."shortlink" = ?  ORDER BY "links"."id" ASC LIMIT 1[0m  [["shortlink", "kXs"]]
+Redirected to http://www.staggeringbeauty.com/
+Completed 302 Found in 2ms (ActiveRecord: 0.2ms)
+
+
+Started POST "/shortlink" for ::1 at 2016-02-25 14:19:02 +0100
+Processing by LinkController#shortlink as HTML
+  Parameters: {"link"=>{"originallink"=>"https://www.google.es/?gfe_rd=cr&ei=9f7OVoHfBubt8wecsbm4DA"}, "authenticity_token"=>"vBCQBs3qjbnuveHl0JE/B7apmnV8cYIgYFPNOqaQg7g9OJc2iK5gXKrhmiaurWYSCnAGZ3w+qyIhZH0dyHnBow=="}
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "links" ("originallink", "shortlink", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["originallink", "http://https://www.google.es/?gfe_rd=cr&ei=9f7OVoHfBubt8wecsbm4DA"], ["shortlink", "Suy"], ["created_at", "2016-02-25 13:19:02.402971"], ["updated_at", "2016-02-25 13:19:02.402971"]]
+  [1m[35m (2.3ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  commit transaction
+Redirected to http://localhost:3000/Suy
+Completed 302 Found in 6ms (ActiveRecord: 2.8ms)
+
+
+Started GET "/Suy" for ::1 at 2016-02-25 14:19:02 +0100
+Processing by LinkController#show as HTML
+  Parameters: {"shortlink"=>"Suy"}
+  [1m[36mLink Load (0.2ms)[0m  [1mSELECT  "links".* FROM "links" WHERE "links"."shortlink" = ?  ORDER BY "links"."id" ASC LIMIT 1[0m  [["shortlink", "Suy"]]
+Redirected to http://https://www.google.es/?gfe_rd=cr&ei=9f7OVoHfBubt8wecsbm4DA
+Completed 302 Found in 3ms (ActiveRecord: 0.2ms)
+
+
+Started POST "/shortlink" for ::1 at 2016-02-25 14:19:43 +0100
+Processing by LinkController#shortlink as HTML
+  Parameters: {"link"=>{"originallink"=>"https://www.google.es/"}, "authenticity_token"=>"vBCQBs3qjbnuveHl0JE/B7apmnV8cYIgYFPNOqaQg7g9OJc2iK5gXKrhmiaurWYSCnAGZ3w+qyIhZH0dyHnBow=="}
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "links" ("originallink", "shortlink", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["originallink", "http://https://www.google.es/"], ["shortlink", "ndH"], ["created_at", "2016-02-25 13:19:43.597040"], ["updated_at", "2016-02-25 13:19:43.597040"]]
+  [1m[35m (0.7ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  commit transaction
+Redirected to http://localhost:3000/ndH
+Completed 302 Found in 4ms (ActiveRecord: 1.1ms)
+
+
+Started GET "/ndH" for ::1 at 2016-02-25 14:19:43 +0100
+Processing by LinkController#show as HTML
+  Parameters: {"shortlink"=>"ndH"}
+  [1m[36mLink Load (0.5ms)[0m  [1mSELECT  "links".* FROM "links" WHERE "links"."shortlink" = ?  ORDER BY "links"."id" ASC LIMIT 1[0m  [["shortlink", "ndH"]]
+Redirected to http://https://www.google.es/
+Completed 302 Found in 3ms (ActiveRecord: 0.5ms)
