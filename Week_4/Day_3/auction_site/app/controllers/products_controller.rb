@@ -15,18 +15,23 @@ class ProductsController < ApplicationController
   end
 
   def create
-    # @user = User.find params[:product_id]
-    # @product = @user.products.new products_params
-    #
-    # if @product.save
-    #   redirect_to action: :index
-    # else
-    #   render "new"
-    # end
+    @user = User.find params[:user_id]
+
+    @product = @user.products.new product_params
+
+    if @product.save
+      flash[:notice] = "Product created succesfully"
+      redirect_to action: :index, user_id: @user.id
+    else
+      flash[:alert] = "ALERT product not created"
+      render 'new'
+    end
 
   end
 
   def destroy
 
   end
+
+  
 end

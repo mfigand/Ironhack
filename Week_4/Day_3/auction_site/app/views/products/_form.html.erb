@@ -1,0 +1,26 @@
+
+
+<% if @product.errors.any? %>
+  <ul>
+    <% @product.errors.full_messages.each do |error| %>
+     <li><%= error %> </li>
+    <% end %>
+  </ul>
+<% end%>
+
+<%= form_for [@user, @product] do |f| %>
+  <%= f.label :title %>
+  <%= f.text_field :title, size: 4 %>
+  <br>
+  <%= f.label :description %>
+  <%= f.text_field :description, size: 4 %>
+  <br>
+  <%= f.label :deadline %>
+  <%= f.date_field :deadline, size: 4 %>
+  <br>
+
+  <%= f.submit 'Save' %>
+
+<% end %>
+<br>
+<%= link_to("Back to products", user_products_path) %>
