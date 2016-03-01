@@ -5,6 +5,7 @@
     <title>Spotify_search</title>
     <script src="jquery-2.1.4.js"></script>
     <script src="spotify_search.js"></script>
+    <link rel="stylesheet" href="spotify_search.css" media="screen" title="no title" charset="utf-8">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.0.15/css/bulma.min.css" media="screen" title="no title" charset="utf-8">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
@@ -12,35 +13,28 @@
   </head>
   <body>
 
-    <div class="columns">
-      <div class="column is-half is-offset-quarter">
+
+  <div class="columns search_line">
+    <div class="column is-half is-offset-quarter">
 
       <h1 class="title">Spotify Search</h1>
-      <h1 class="error"></h1>
+      <h1 class="error text-danger"></h1>
 
       <p class="control">
-        <label class="label">Search by Artist</label>
-        <input class="input" type="text" placeholder="Text input">
+        <input class="input" type="text" placeholder="Search by Artist">
       </p>
 
       <button class="js-search button is-success">Search</button>
     </div>
   </div>
 
-  <div class="columns">
-    <div class="column is-4 is-offset-2">
-      <ul class="list_artist">
-      </ul>
-      <div class="list_image">
-      </div>
-    </div>
-
-    <div class="column is-4">
-      <ul class="list_album">
-      </ul>
-    </div>
+  <div class="columns result_line">
+    <div class="column is-8 is-offset-2">
+      <ol class="list_artist">
+      </ol>
+    <div class="list_image">
   </div>
-
+</div>
 
 <!-- Modal -->
 <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
@@ -52,9 +46,10 @@
       </div>
       <div class="modal-body">
 
+
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
+        <button type="button" class="button is-success" data-dismiss="modal">Close</button>
       </div>
     </div>
   </div>

@@ -1,25 +1,26 @@
 $(document).on('ready', function(){
   $('.js-search').on('click',function () {
+    $(".error").empty();
     $('.list_result').empty();
     var artist = $(".input").val();
     var request = $.get('https://api.spotify.com/v1/search?type=artist&query='+artist);
-    request.done(handleResponse);
+    request.done(show_artist);
     request.fail(handleError);
   });
 });
 
-function handleResponse (response){
+function show_artist (response){
   console.log(response);
-
     $.each(response.artists.items,function(index,val) {
       if (val.images.length === 0){
-        $('.list_artist').append("<li class='li_artist label label-primary' id="+val.id+">"+val.name+"  NO IMAGE ALBUM</li>");
+        $('.list_artist').append("<a class='li_artist label label-primary' id="
+        +val.id+">"+val.name+"  NO IMAGE ALBUM</a>");
       }
       else {
         $('.list_artist').append(
-          "<span id="+val.id+" class='li_artist label label-primary' data-toggle='modal' data-target='#myModal'>"
-          +val.name+"</span>"
-          +"<img src='"+val.images[0].url+"'/>");
+          "<a id="+val.id+" class='li_artist label label-primary' data-toggle='modal' data-target='#myModal'>"
+          +val.name+"</a>"
+          +"<img src='"+val.images[0].url+"' class='materialboxed' />");
       }
     });
     $('.li_artist').on('click', handleArtistClick );
@@ -44,9 +45,9 @@ function show_albums (albums){
   $(".modal-body").empty()
   $.each(albums.items,function(index,val) {
     $(".modal-body").append(
-      "<li class='li_album' id="+val.id+" >"
+      "<li><a class='li_album' id="+val.id+" >"
       +val.name
-      +"</li>");
+      +"</a></li>");
     })
     $('.li_album').on('click', handleAlbumClick);
 }
@@ -65,12 +66,12 @@ function show_songs (songs){
   $(".modal-body").empty()
   $.each(songs.tracks.items,function(index,val) {
     $(".modal-body").append(
-      "<a class='li_songs' id="
+      "<li><a class='li_songs' id="
       +val.id+" href='"
       +val.preview_url
       +"' target='_blank' >"
       +val.name
-      +"</a><br>");
+      +"</a></li>");
       // debugger
     })
     // $('.li_songs').on('click', handleSongClick);
