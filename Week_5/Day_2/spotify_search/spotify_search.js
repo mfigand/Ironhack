@@ -20,7 +20,7 @@ function show_artist (response){
         $('.list_artist').append(
           "<a id="+val.id+" class='li_artist label label-primary' data-toggle='modal' data-target='#myModal'>"
           +val.name+"</a>"
-          +"<img src='"+val.images[0].url+"' class='materialboxed' />");
+          +"<img src='"+val.images[0].url+"' class='img-rounded' />");
       }
     });
     $('.li_artist').on('click', handleArtistClick );

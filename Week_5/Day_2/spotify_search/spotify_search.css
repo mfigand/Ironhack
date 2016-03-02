@@ -4,3 +4,17 @@
   /*background-image: url("https://d2c87l0yth4zbw.global.ssl.fastly.net/i/home/carousel/bg-premium-sm.jpg");*/
   /*background-image: url("https://d2c87l0yth4zbw.global.ssl.fastly.net/i/home/yim-2015-hero-sm.jpg");*/
 }
+
+article{
+  min-width: 500px !important;
+}
+
+img{
+  /*width: 400px;*/
+}
+
+footer{
+  text-align: center;
+  background: black !important;
+  color: white;
+}
