@@ -1,8 +1,6 @@
 var map;
 var positionArray = JSON.parse(localStorage.getItem("position")) || [];
 
-
-
 if ("geolocation" in navigator){
   navigator.geolocation.getCurrentPosition(onLocation, onError);
 }
@@ -25,14 +23,11 @@ function onError(err){
 }
 
 function createMap(position){
-
   map = new google.maps.Map($('#map')[0], {
     center: position,
     zoom: 17
   });
-
   $.each(positionArray,function(index,val) {
-
     createMarker(val);
   })
 
@@ -52,6 +47,8 @@ function setUpAutocomplete(){
   var autocomplete = new google.maps.places.Autocomplete(input);
   autocomplete.addListener('place_changed', function(){
     var place = autocomplete.getPlace();
+    var address = place.formatted_address;
+    $('#map').on('click', markerClick(address))
     var position = {
       lat: place.geometry.location.lat(),
       lng: place.geometry.location.lng()
@@ -64,4 +61,14 @@ function setUpAutocomplete(){
       alert("The place has no location...?")
     }
   });
+}
+
+var markerClick(address) = function(event){
+  $(".modal-body").empty();
+  $(".modal-body").append("address");
+  // console.log('llego',$(this).prop('id'));
+  // window.P = $(event.currentTarget)
+  // var request = $.get('https://api.spotify.com/v1/albums/'+$(this).prop('id'));
+  // request.done(show_songs);
+  // request.fail(handleError);
 }
