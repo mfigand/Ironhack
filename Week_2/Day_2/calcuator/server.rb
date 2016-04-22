@@ -5,15 +5,14 @@ require_relative "./lib/Calculator.rb"
 enable(:sessions)
 
 
-get "/add" do 
+get "/add" do
   erb(:add)
 end
 
-get "/calculate_add" do 
+get "/calculate_add" do
   "params data: " + params.inspect
-  #binding.pry
   erb(:add)
-  
+
 end
 
 post "/calculate" do
@@ -31,25 +30,6 @@ post "/calculate" do
   elsif functions == "divide"
     c.divide
   "The result of #{params[:first]} divided by #{params[:second]} is #{c.divide}"
-  # #redirect to("/calc_success")
+
   end
 end
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

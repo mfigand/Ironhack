@@ -3,9 +3,6 @@ require "sinatra/reloader" if development?
 require "artii"
 enable(:sessions)
 
-# get "ascii/one_random_word" do
-
-# end
 
 get "/ascii/:insert" do#convert the word to ASCII and then print it out
   insert = params[:insert]
@@ -13,14 +10,3 @@ get "/ascii/:insert" do#convert the word to ASCII and then print it out
   @word = @a.asciify(insert)
   erb(:word)
 end
-
-
-
-
-
-
-
-
-
-
-
