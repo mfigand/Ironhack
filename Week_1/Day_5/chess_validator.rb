@@ -110,9 +110,9 @@ class Validator
         when "--"
           puts "empty"
       end
-    end   
+    end
   end
-  
+
   # def find_final_positions
   #   start_position = []
   #   @smArray.each do |i|
@@ -132,13 +132,13 @@ end
 
 module Movement
   def rook_move
-      @startArray[0] == @finalArray[0] || @startArray[1] == @finalArray[1] ? "legal" : "ilegal"
-    end
+      @startArray[0] == @finalArray[0] || @startArray[1] == @finalArray[1] ? "legal": "ilegal"
+  end
   def bishop_move
       if @startArray[0] == @finalArray[0] || @startArray[1] == @finalArray[1]
        "ilegal"
      elsif ((@finalArray[1]-@startArray[1])/(@finalArray[0]-@startArray[0])).abs == 1
-       "legal" 
+       "legal"
      else
        "ilegal"
      end
@@ -188,7 +188,7 @@ end
 
 class Horse < Piece
   include Movement
-  def move 
+  def move
     horse_move
   end
 end
@@ -226,6 +226,3 @@ val.validate_move
 # puts horseB.move
 # puts kingW.move
 # puts pawnW.move
-
-
-

@@ -1,5 +1,4 @@
-
-# You could send a  Object like an argument and then the class where you sent it 
+# You could send a  Object like an argument and then the class where you sent it
 # recives all the methods of that object.
 # *****************************************************
 
@@ -9,8 +8,8 @@ class Car
         @engine = engine
     end
 
-    def make_noise
-        puts @noise + @engine.make_noise
+    def make_CarNoise
+        puts @noise + @engine.make_EngineNoise
     end
 end
 
@@ -20,7 +19,7 @@ class Engine
         @cilinders = cilinders
     end
 
-    def make_noise
+    def make_EngineNoise
         @noise
     end
 end
@@ -33,26 +32,4 @@ cuatrolatas = Car.new("ñikiñiki", motor_chungo)
 f1alonso = Car.new("zzzzzss", motor_chungo)
 maybach = Car.new("zzzzzss", motor_f1)
 
-cuatrolatas.make_noise
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+cuatrolatas.make_CarNoise

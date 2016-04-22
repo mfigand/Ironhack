@@ -3,8 +3,6 @@ class Midas
     @gold = initial_gold
   end
 
-
-
   def take_gold_from(other)
     @gold += other.gold
   end
@@ -29,5 +27,3 @@ class Midas
 
   m1.take_gold_from(m2)
   => 30
-
-

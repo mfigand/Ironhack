@@ -4,10 +4,10 @@ class ShoppingCart
   def initialize priceList
     @priceList = priceList
     @unitItems = {}
-
   end
+
   def add_items (items)
-    @unitItems[items] === nil ? @unitItems[items]=1 : @unitItems[items]+=1  
+    @unitItems[items] === nil ? @unitItems[items]=1 : @unitItems[items]+=1
   end
 
   def show
@@ -39,20 +39,20 @@ class ShoppingCart
     @unitItems.each do |key, value|
        modul4x1[key] = @unitItems[key] % 4
     end
+
     if @unitItems[:grapes] >= 4
-      puts "For each 4 grapes you get 1 bana for free, if you want them answer YES"
+      puts "For each 4 grapes you by, you'll get 1 banana for free. If you want them, answer YES"
       bananaChoose = gets.chomp.upcase
-    #else
     end
+
     if bananaChoose == "YES"
      freeBananas = ((@unitItems[:grapes]-modul4x1[:grapes])*1/4)
      puts "You get #{freeBananas} banana(s) for free"
      @unitItems[:banana] = @unitItems[:banana]-freeBananas
-    #else
     end
   end
-  
-end  
+
+end
 
 priceList = {
   apple: 10,
@@ -87,8 +87,3 @@ cart.discount2x1
 cart.discount3x2
 cart.discount4x1
 cart.show
-
-
-
-
-

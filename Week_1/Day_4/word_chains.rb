@@ -17,7 +17,3 @@ list_of_words = []
 dictionary = Dictionary.new(list_of_words)
 my_chain = WordChain.new(dictionary)
 my_chain.find_chain("cat", "dog")
-# cat
-# cot
-# cog
-# dog

@@ -7,7 +7,7 @@ class Blog
   def add_post(post)
     @container.push (post)
   end
-  
+
   def publish_front_page
     @ordered_posts = @container.sort_by(&:date).reverse do |post| #ordena en orden inverso
     post.date
@@ -18,7 +18,7 @@ class Blog
        puts "**************"
        puts "#{item.text}"
        puts "--------------"
-      elsif 
+      elsif
        puts "*******#{item.title}*******"
        puts "**************"
        puts "#{item.text}"
@@ -38,18 +38,6 @@ class Blog
      j = 1
      pageHash = {}
 
-     # case choose
-     #  when "N"
-        
-     #    if s <= 3
-     #    pageHash[j] = [@ordered_posts[s]]
-     #    s += 1
-     #    end
-
-     #  when "P"
-     #    puts @container[(s)..(s-3)]
-     #    s -= 3
-     #  end 
   end
 
 end
@@ -85,13 +73,3 @@ my_blog.add_post(post8)
 
 my_blog.publish_front_page
 my_blog.pagination
-
-
-
-
-
-
-
-
-
-

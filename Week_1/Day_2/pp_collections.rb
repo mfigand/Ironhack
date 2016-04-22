@@ -1,4 +1,4 @@
-require 'pry' 
+require 'pry'
 
 class ProgrammingLanguage
   attr_accessor :name, :age, :type
@@ -31,7 +31,7 @@ aged_languages = array.map do | language |
   language.age +=1
   language
   end
-  #binding.pry
+
   sort_age(aged_languages)
 end
 
@@ -42,10 +42,8 @@ end
 
 def delete_java(array)
   array_delete = array.delete_at(6)
-  #binding.pry
+
   array_printer(array_delete)
 end
 
 increase_age(array_of_languages)
-
-

@@ -1,7 +1,4 @@
 
-
-# *****************************************************
-
 class Car
     def initialize(sound, engine)
         @noise = sound
@@ -31,26 +28,3 @@ motor_f1 = Engine.new("BBBBBBBBBRRRRRRRRRRRRRRMMMMM", "16")
 cuatrolatas = Car.new ("ñikiñiki", motor_chungo)
 f1alonso = Car.new ("zzzzzss", motor_chungo)
 maybach = Car.new ("zzzzzss", motor_f1)
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
